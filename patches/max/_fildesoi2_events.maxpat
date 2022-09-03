@@ -158,7 +158,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 566.999999105930328, 838.0, 135.0, 116.0 ],
-					"text" : ";\rtoMsg Evt_16;\rmTDel_level 124;\rdirectGuitar_level 120;\rhStretch -1;\rtStretch 0.08;\rtStretch 0.3 15000;\r"
+					"text" : ";\rtoMsg Evt_16;\rdelharmo_level 124;\rguitar_level 120;\rhStretch -1;\rtStretch 0.08;\rtStretch 0.3 15000;\r"
 				}
 
 			}
@@ -600,7 +600,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 734.0, 1508.0, 135.0, 102.0 ],
-					"text" : ";\rtoMsg Evt_28;\rhStretch -1;\rtStretch 0.6;\rdirectGuitar_level 127;\rwHarmo 115;\r"
+					"text" : ";\rtoMsg Evt_28;\rhStretch -1;\rtStretch 0.6;\rguitar_level 127;\rwHarmo 115;\r"
 				}
 
 			}
@@ -624,7 +624,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 597.0, 1508.0, 135.0, 116.0 ],
-					"text" : ";\rtoMsg Evt_27;\rhStretch 1;\rtStretch 0.8;\rrenv8_level 127;\rdirectGuitar_level 122;\rwHarmo 110;\r"
+					"text" : ";\rtoMsg Evt_27;\rhStretch 1;\rtStretch 0.8;\rrenv_level 127;\rguitar_level 122;\rwHarmo 110;\r"
 				}
 
 			}
@@ -648,7 +648,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 460.0, 1508.0, 135.0, 236.0 ],
-					"text" : ";\rtoMsg Evt_26;\rwHarmo 110;\rtoMT out03 0.2;\rtoMT out06 0.2;\rtoMT out07 0.2;\rtoMT d12 4250;\rtoMT d13 3800;\rtoMT d14 3400;\rtoMT d15 3050;\rrenv8_freq 17;\rrenv8_short 0.71;\rrenv8_level 127;\rdirectGuitar_level 120;\rtStretch 0.9;\rhStretch -2.;\r"
+					"text" : ";\rtoMsg Evt_26;\rwHarmo 110;\rtoMT out03 0.2;\rtoMT out06 0.2;\rtoMT out07 0.2;\rtoMT d12 4250;\rtoMT d13 3800;\rtoMT d14 3400;\rtoMT d15 3050;\rrenv_freq 17;\rrenv_short 0.71;\rrenv_level 127;\rguitar_level 120;\rtStretch 0.9;\rhStretch -2.;\r"
 				}
 
 			}
@@ -876,7 +876,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 710.0, 798.0, 137.0, 679.0 ],
-					"text" : ";\rtoMsg Evt_17;\rtStretch 1;\rhStretch 4;\rmTDel_level 121;\rdirectGuitar_level 127;\rtoMT d12 4250;\rtoMT d13 3800;\rtoMT d14 3400;\rtoMT d15 3050;\rtoMT out00 0.5;\rtoMT out01 0.5;\rtoMT out02 0.5;\rtoMT out04 0.5;\rtoMT out05 0.5;\rtoMT out12 0.5;\rtoMT out13 0.5;\rtoMT out14 0.5;\rtoMT out15 0.5;\rtoMT out03 0.2;\rtoMT out06 0.2;\rtoMT out07 0.2;\rwHarmo 64;\rtoMT smoothDuration 5;\rtoMT r000 1;\rtoMT r017 1;\rtoMT r034 1;\rtoMT r051 1;\rtoMT r068 1;\rtoMT r085 1;\rtoMT r102 1;\rtoMT r119 1;\rtoMT r008 1;\rtoMT r025 1;\rtoMT r042 1;\rtoMT r059 1;\rtoMT r072 1;\rtoMT r089 1;\rtoMT r106 1;\rtoMT r123 1;\rtoMT r136 1;\rtoMT r153 1;\rtoMT r170 1;\rtoMT r187 1;\rrenv8_level 127;\rrenv8_freq 10;\rrenv8_short 0.5;\rtoSpatConfig 2;\rtoMsg Evt_17;\r"
+					"text" : ";\rtoMsg Evt_17;\rtStretch 1;\rhStretch 4;\rdelharmo_level 121;\rguitar_level 127;\rtoMT d12 4250;\rtoMT d13 3800;\rtoMT d14 3400;\rtoMT d15 3050;\rtoMT out00 0.5;\rtoMT out01 0.5;\rtoMT out02 0.5;\rtoMT out04 0.5;\rtoMT out05 0.5;\rtoMT out12 0.5;\rtoMT out13 0.5;\rtoMT out14 0.5;\rtoMT out15 0.5;\rtoMT out03 0.2;\rtoMT out06 0.2;\rtoMT out07 0.2;\rwHarmo 64;\rtoMT smoothDuration 5;\rtoMT r000 1;\rtoMT r017 1;\rtoMT r034 1;\rtoMT r051 1;\rtoMT r068 1;\rtoMT r085 1;\rtoMT r102 1;\rtoMT r119 1;\rtoMT r008 1;\rtoMT r025 1;\rtoMT r042 1;\rtoMT r059 1;\rtoMT r072 1;\rtoMT r089 1;\rtoMT r106 1;\rtoMT r123 1;\rtoMT r136 1;\rtoMT r153 1;\rtoMT r170 1;\rtoMT r187 1;\rrenv_level 127;\rrenv_freq 10;\rrenv_short 0.5;\rtoSpatConfig 2;\rtoMsg Evt_17;\r"
 				}
 
 			}
@@ -935,7 +935,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 287.0, 798.0, 135.0, 169.0 ],
-					"text" : ";\rtoMsg Evt_14;\rtStretch 0.21;\rhStretch -1;\rtoMT out03 0.5;\rtoMT out06 0.5;\rtoMT out07 0.5;\rrenv8_freq 10;\rrenv8_short 0.5;\rrenv8_level 127;\rdirectGuitar_level 127;\r"
+					"text" : ";\rtoMsg Evt_14;\rtStretch 0.21;\rhStretch -1;\rtoMT out03 0.5;\rtoMT out06 0.5;\rtoMT out07 0.5;\rrenv_freq 10;\rrenv_short 0.5;\rrenv_level 127;\rguitar_level 127;\r"
 				}
 
 			}
@@ -959,7 +959,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 136.999999761581421, 798.0, 134.0, 223.0 ],
-					"text" : ";\rtoMsg Evt_13;\rtoMT out03 0.15;\rtoMT out06 0.15;\rtoMT out07 0.15;\revtlist 13.2;\rrenv8_freq 17;\rrenv8_short 0.71;\rrenv8_level 140;\rdirectGuitar_level 115;\revtlist 13.3;\rtStretch 0.4;\rhStretch 4.;\rtStretch 0.21 25000;\rhStretch 3.85 25000;\r"
+					"text" : ";\rtoMsg Evt_13;\rtoMT out03 0.15;\rtoMT out06 0.15;\rtoMT out07 0.15;\revtlist 13.2;\rrenv_freq 17;\rrenv_short 0.71;\rrenv_level 140;\rguitar_level 115;\revtlist 13.3;\rtStretch 0.4;\rhStretch 4.;\rtStretch 0.21 25000;\rhStretch 3.85 25000;\r"
 				}
 
 			}
@@ -1030,7 +1030,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1288.0, 237.333332300186157, 135.0, 183.0 ],
-					"text" : ";\rtoMsg Evt_11;\rtStretch 0.21;\rhStretch 3;\rtoMT out03 0.5;\rtoMT out06 0.5;\rtoMT out07 0.5;\revtlist 10.2;\rrenv8_freq 10;\rrenv8_short 0.5;\rrenv8_level 127;\rdirectGuitar_level 127;\r"
+					"text" : ";\rtoMsg Evt_11;\rtStretch 0.21;\rhStretch 3;\rtoMT out03 0.5;\rtoMT out06 0.5;\rtoMT out07 0.5;\revtlist 10.2;\rrenv_freq 10;\rrenv_short 0.5;\rrenv_level 127;\rguitar_level 127;\r"
 				}
 
 			}
@@ -1054,7 +1054,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1127.499999672174454, 237.333332300186157, 134.0, 223.0 ],
-					"text" : ";\rtoMsg Evt_10;\rtoMT out03 0.15;\rtoMT out06 0.15;\rtoMT out07 0.15;\revtlist 10.2;\rrenv8_freq 17;\rrenv8_short 0.71;\rrenv8_level 140;\rdirectGuitar_level 115;\revtlist 10.3;\rtStretch 0.4;\rhStretch 4.;\rtStretch 0.21 25000;\rhStretch 3.85 25000;\r"
+					"text" : ";\rtoMsg Evt_10;\rtoMT out03 0.15;\rtoMT out06 0.15;\rtoMT out07 0.15;\revtlist 10.2;\rrenv_freq 17;\rrenv_short 0.71;\rrenv_level 140;\rguitar_level 115;\revtlist 10.3;\rtStretch 0.4;\rhStretch 4.;\rtStretch 0.21 25000;\rhStretch 3.85 25000;\r"
 				}
 
 			}
@@ -1126,7 +1126,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 757.0, 237.333332300186157, 135.0, 156.0 ],
-					"text" : ";\rtoMsg Evt_7;\rhStretch 3;\rtStretch 0.21;\rmTDel_level 127;\rdirectGuitar_level 127;\rtoMT out12 0.5;\rtoMT out13 0.5;\rtoMT out14 0.5;\rtoMT out15 0.5;\r"
+					"text" : ";\rtoMsg Evt_7;\rhStretch 3;\rtStretch 0.21;\rdelharmo_level 127;\rguitar_level 127;\rtoMT out12 0.5;\rtoMT out13 0.5;\rtoMT out14 0.5;\rtoMT out15 0.5;\r"
 				}
 
 			}
@@ -1139,7 +1139,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 597.999999761581421, 237.333332300186157, 135.0, 116.0 ],
-					"text" : ";\rtoMsg Evt_6;\rmTDel_level 124;\rdirectGuitar_level 120;\rhStretch -1;\rtStretch 0.08;\rtStretch 0.3 15000;\r"
+					"text" : ";\rtoMsg Evt_6;\rdelharmo_level 124;\rguitar_level 120;\rhStretch -1;\rtStretch 0.08;\rtStretch 0.3 15000;\r"
 				}
 
 			}
@@ -1352,7 +1352,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 112.0, 194.0, 256.0, 1188.0 ],
-									"text" : ";\rtoMT d00 300;\rtoMT d01 425;\rtoMT d02 800;\rtoMT d03 925;\rtoMT d04 1300;\rtoMT d05 1800;\rtoMT d06 2050;\rtoMT d07 2300;\rtoMT d08 300;\rtoMT d09 500;\rtoMT d10 750;\rtoMT d11 1000;\rtoMT d12 19000;\rtoMT d13 18125;\rtoMT d14 17000;\rtoMT d15 16125;\rtoMT fd08 0.675;\rtoMT fd09 0.725;\rtoMT fd10 0.775;\rtoMT fd11 0.825;\rtoMT tr00 386;\rtoMT tr01 772;\rtoMT tr02 -386;\rtoMT tr03 180;\rtoMT tr04 386;\rtoMT tr05 -772;\rtoMT tr06 -45;\rtoMT tr07 180;\rtoMT tr12 -575;\rtoMT tr13 -500;\rtoMT tr14 -475;\rtoMT tr15 -450;\rtoMT inp08 1;\rtoMT inp09 1;\rtoMT inp10 1;\rtoMT inp11 1;\rtoMT inp12 1;\rtoMT inp13 1;\rtoMT inp14 1;\rtoMT inp15 1;\rtoMT out00 0.5;\rtoMT out01 0.5;\rtoMT out02 0.5;\rtoMT out03 0.5;\rtoMT out04 0.5;\rtoMT out05 0.5;\rtoMT out06 0.5;\rtoMT out07 0.5;\rtoMT out12 0.5;\rtoMT out13 0.5;\rtoMT out14 0.5;\rtoMT out15 0.5;\rtoMT xvd08 0;\rtoMT xvd09 0;\rtoMT xvd10 0;\rtoMT xvd11 0;\rtStretch 0.21;\rhStretch 4;\rwHarmo 64;\rtoMT smoothDuration 5;\rtoMT r000 1;\rtoMT r017 1;\rtoMT r034 1;\rtoMT r051 1;\rtoMT r068 1;\rtoMT r085 1;\rtoMT r102 1;\rtoMT r119 1;\rtoMT r008 1;\rtoMT r025 1;\rtoMT r042 1;\rtoMT r059 1;\rtoMT r072 1;\rtoMT r089 1;\rtoMT r106 1;\rtoMT r123 1;\rtoMT r136 1;\rtoMT r153 1;\rtoMT r170 1;\rtoMT r187 1;\rtoSpatConfig 1;\rm renv8_level 127;\rrenv8_freq 10;\rrenv8_short 0.5;\rdirectGuitar_level 127;\rmTDel_level 127;\r"
+									"text" : ";\rtoMT d00 300;\rtoMT d01 425;\rtoMT d02 800;\rtoMT d03 925;\rtoMT d04 1300;\rtoMT d05 1800;\rtoMT d06 2050;\rtoMT d07 2300;\rtoMT d08 300;\rtoMT d09 500;\rtoMT d10 750;\rtoMT d11 1000;\rtoMT d12 19000;\rtoMT d13 18125;\rtoMT d14 17000;\rtoMT d15 16125;\rtoMT fd08 0.675;\rtoMT fd09 0.725;\rtoMT fd10 0.775;\rtoMT fd11 0.825;\rtoMT tr00 386;\rtoMT tr01 772;\rtoMT tr02 -386;\rtoMT tr03 180;\rtoMT tr04 386;\rtoMT tr05 -772;\rtoMT tr06 -45;\rtoMT tr07 180;\rtoMT tr12 -575;\rtoMT tr13 -500;\rtoMT tr14 -475;\rtoMT tr15 -450;\rtoMT inp08 1;\rtoMT inp09 1;\rtoMT inp10 1;\rtoMT inp11 1;\rtoMT inp12 1;\rtoMT inp13 1;\rtoMT inp14 1;\rtoMT inp15 1;\rtoMT out00 0.5;\rtoMT out01 0.5;\rtoMT out02 0.5;\rtoMT out03 0.5;\rtoMT out04 0.5;\rtoMT out05 0.5;\rtoMT out06 0.5;\rtoMT out07 0.5;\rtoMT out12 0.5;\rtoMT out13 0.5;\rtoMT out14 0.5;\rtoMT out15 0.5;\rtoMT xvd08 0;\rtoMT xvd09 0;\rtoMT xvd10 0;\rtoMT xvd11 0;\rtStretch 0.21;\rhStretch 4;\rwHarmo 64;\rtoMT smoothDuration 5;\rtoMT r000 1;\rtoMT r017 1;\rtoMT r034 1;\rtoMT r051 1;\rtoMT r068 1;\rtoMT r085 1;\rtoMT r102 1;\rtoMT r119 1;\rtoMT r008 1;\rtoMT r025 1;\rtoMT r042 1;\rtoMT r059 1;\rtoMT r072 1;\rtoMT r089 1;\rtoMT r106 1;\rtoMT r123 1;\rtoMT r136 1;\rtoMT r153 1;\rtoMT r170 1;\rtoMT r187 1;\rtoSpatConfig 1;\rm renv_level 127;\rrenv_freq 10;\rrenv_short 0.5;\rguitar_level 127;\rdelharmo_level 127;\r"
 								}
 
 							}
