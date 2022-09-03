@@ -1,0 +1,237 @@
+//--------------------------------------------------------------------------------------//
+//---------------------------------fildesoi12.lib---------------------------------------//
+//---------------FAUST code for Fil de Soi 1 and Fil de Soi 2 pieces--------------------//
+//--------------------for acoustic guitar and live electronics--------------------------//
+//
+//-------------------------BY ALAIN BONARDI - 2016 - 2022-------------------------------//
+//--------------------------------------------------------------------------------------//
+//
+//includes from abclib repository
+//
+import("submodules/faustCodes/library/mm.lib");
+import("submodules/faustCodes/library/hoa2.lib");
+//
+//--------------------------------------------------------------------------------------//
+//FEEDBACK REINJECTION MATRIX N x N
+//--------------------------------------------------------------------------------------//
+fd_toggle(c, in) = checkbox("h:Lines/h:Reinjection_Matrix/v:Del%2c-->/r%3in");
+fd_Mixer(N,out) 	= par(in, N, *(fd_toggle(in, in+out*N)) ) :> _ ;
+fdMatrix(N) 	= par(in, N, _) <: par(out, N, fd_Mixer(N, out));
+
+//--------------------------------------------------------------------------------------//
+//SPATIALIZATION MATRIX N x M
+//--------------------------------------------------------------------------------------//
+sp_toggle(c, in) = checkbox("h:Lines/h:SpatializationMatrix/v:Sig%2c-->/sp%3in") : spatSmoothLine;
+sp_Mixer(N,out) 	= par(in, N, *(sp_toggle(in, in+out*N)) ) :> _ ;
+spMatrix(N,M) 	= par(in, N, _) <: par(out, M, sp_Mixer(N, out));
+
+//--------------------------------------------------------------------------------------//
+millisec = ma.SR / 1000.0;
+
+//--------------------------------------------------------------------------------------//
+//CONTROL PARAMETERS FOR RANDOM ENV PROCESSES
+//--------------------------------------------------------------------------------------//
+
+renv_rarefaction = hslider("h:RandomEnv/renv_short", 0.5, 0, 1, 0.01);
+renv_freq = nentry("h:RandomEnv/renv_freq", 10, 0.01, 100, 0.01);
+renv_trim = hslider("h:RandomEnv/renv_trim", 0, -127, 18, 0.01) : dbtogain;
+
+//--------------------------------------------------------------------------------------//
+//CONTROL PARAMETERS FOR DELHARMO PROCESSES
+//--------------------------------------------------------------------------------------//
+
+//Size of the harmonizer window for Doppler effect//
+hWin = hslider("h:Global_Parameters/hWin", 64, 1, 127, 0.01) : pdLineDrive4096;
+
+//Duration of smoothing//
+smoothDuration = hslider("h:Global_Parameters/smoothDuration", 20, 10, 5000, 1)/1000;
+
+//Delay line parameters//
+
+d(ind) = int(hslider("h:Lines/v:Del_Durations/d%2ind", (100*(ind+1)), 0, 21000, 1)*millisec*hslider("h:Global_Parameters/dStretch [7]", 1, 0.01, 10, 0.01));
+fdbk(ind) = hslider("h:Lines/v:Del_Feedbacks/fd%2ind", 0, 0, 0.99, 0.01):smoothLine;
+
+//Dispatching between harmonizer (1) and simple delay (0)//
+xvd(ind) = hslider("h:Lines/v:EffeX_vs_Del/xvd%2ind", 1, 0, 1, 0.01);
+
+//Transposition in midicents//
+tr(ind) = hslider("h:Lines/v:Harmo_Transpositions/tr%2ind", 0, -2400, 2400, 1)*hslider("h:Global_Parameters/hStretch [7]", 1, -10, 10, 0.01);
+
+//Input gains//
+//from 0 to 1//
+inp(ind) = hslider("h:Lines/v:Line_input/inp%2ind [5]", 1, 0, 1, 0.01):smoothLine;
+
+//OUTPUT GAINS//
+//from 0 to 4 since harmonizers can fade the output signal//
+out(ind) = hslider("h:Lines/v:Line_output/out%2ind [6]", 1, 0, 1, 0.01):smoothLine;
+
+
+//--------------------------------------------------------------------------------------//
+//CONTROL PARAMETERS GAINS
+//--------------------------------------------------------------------------------------//
+guitarGain = hslider("h:Global_Parameters/guitarGain [7]", -34, -127, 18, 0.01) : dbtogain;
+delharmoGain = hslider("h:Global_Parameters/delharmoGain [7]", 0, -127, 18, 0.01) : dbtogain;
+
+//--------------------------------------------------------------------------------------//
+//CONTROL PARAMETERS FOR ENCODERS
+//--------------------------------------------------------------------------------------//
+rotfreq(ind) = hslider("h:Encoders/rotfreq%ind", 0.1, -10, 10, 0.01);
+//rotphase(ind) = hslider("h:Encoders/rotphase%ind", 0, 0, 1, 0.01);
+//new definition in radians to use rEncoder function from hoa.lib
+rotphase(ind) = hslider("h:Encoders/rotphase%ind", 0, 0, 1, 0.01) * 2 * ma.PI;
+
+//--------------------------------------------------------------------------------------//
+//CONTROL PARAMETERS FOR DECODING
+//--------------------------------------------------------------------------------------//
+direct = (2 * nentry("h:decoder/v:general/[0]directangles", 1, 0, 1, 1) - 1) : si.smoo; 
+offset = hslider("h:decoder/v:general/[1]angularoffset[unit:deg]", 0, -180, 180, 1) : si.smoo;
+gain = hslider("h:decoder/v:general/[3]gain[unit:dB]", 0, -127, 18, 0.01) : dbtogain;
+stereo = nentry("h:decoder/v:general/[4]stereo", 0, 0, 1, 1) : si.smoo;
+//the angle of the the ith loudspeaker among nls loudspeakers, expressed in degrees for the end-user
+a(i, nls) = nentry("h:decoder/v:angles/a%2i [unit:deg]", i * 360 / nls, -360, 360, 1);
+//la = list of angles//
+la(p) = par(i, p, a(i, p));
+
+//for stereophonic projection
+//phi0 is the half angle of the stereophony, between the left speaker and the front line of the listener//
+phi0 = hslider("v:chopan/phi0 [unit:deg]", 30, 1, 90, 1) : si.smoo;
+
+//--------------------------------------------------------------------------------------//
+//DEFINITION OF 2 SMOOTHING FUNCTIONS FOR CONTROLLERS
+//--------------------------------------------------------------------------------------//
+smoothLine = si.smooth(ba.tau2pole(smoothDuration));
+spatSmoothLine = si.smooth(ba.tau2pole(0.2));//200 msec interpolation for spatialization matrix//
+
+
+//--------------------------------------------------------------------------------------//
+// High pass filter to avoid the loud resonance of the bass of the guitar               //
+//--------------------------------------------------------------------------------------//
+highPassFilter = fi.tf2(0.94642, -1.89284, 0.94642, -1.988323, 0.988432); 
+
+//--------------------------------------------------------------------------------------//
+// CONVERSION DB=>LINEAR
+//--------------------------------------------------------------------------------------//
+dbcontrol = _ <: ((_ > -127.0), ba.db2linear) : *;
+
+//--------------------------------------------------------------------------------------//
+//DOUBLE OVERLAPPED DELAY
+//--------------------------------------------------------------------------------------//
+//using overlappedDoubleDelay from mm.lib
+//nsamp is an integer number corresponding to the number of samples of delay
+//--------------------------------------------------------------------------------------//
+maxSampSize = 1048576;
+doubleDelay21s(nsamp) = overlappedDoubleDelay(nsamp, maxSampSize, 30);
+
+//--------------------------------------------------------------------------------------//
+//DEFINITION OF A SPECIFIC HARMONIZE
+//--------------------------------------------------------------------------------------//
+//we define a specific harmonizer with 4 modules where as the harmonizer in mm.lib only uses 2 modules
+overlapped4Harmo(tra, win) = _ <: par(i, 4, transposer(i/4, tra, win, 1)) :> _ ;
+overlapped4HarmoDryWet(tra, alpha, win) = _ <: (*(alpha), *(1-alpha)) : (overlapped4Harmo(tra, win), _) :> _ ;
+
+//--------------------------------------------------------------------------------------//
+//INPUT DISPATCHING
+//--------------------------------------------------------------------------------------//
+//
+//starting with 2n values sigA1, sigA2, ... sigAn, sigB1, sigB2, ... sigBn
+//the result is the vector sigA1, sigB1, sigA2, sigB2, ..., sigAn, sigBn
+//--------------------------------------------------------------------------------------//
+inputSort(n) = ro.interleave(n, 2);
+
+//the 3d parameter of shorteningEnv should be either i/n or 0
+//
+mTShorteningEnv(n, f, s) = no.multinoise(n) : par(i, n, shorteningEnv(f, s, i/n));
+
+mTShortening(n, f, s) = par(i, n, _), mTShorteningEnv(n, f, s) : inputSort(n) : par(i, n, *);
+mTShortening6(f, s, t) = _ : *(t) <: (_, _, _, _, _, _) : mTShortening(6, f, s);
+
+//--------------------------------------------------------------------------------------//
+//BLOCK DEFINITIONS
+//--------------------------------------------------------------------------------------//
+//delay block//
+DelBlock(n) = par(i, n, (+ : doubleDelay21s(d(i))));
+
+//harmonizer block//
+HarmoBlock(n) = par(i, n, (sigClip : overlapped4HarmoDryWet(tr(i), xvd(i), hWin)));
+
+//delay and harmonizer block//
+DelHarmoBlock(n) = DelBlock(n) : HarmoBlock(n);
+
+//feedback block//
+fdBlock(n) = par(i, n, *(fdbk(i) : *(1 - xvd(i) * 0.75)));
+
+//feedback and dispatching block//
+fdToMatrixBlock(n) = fdBlock(n) : fdMatrix(n);
+
+//n inlets with n gain controls//
+inputBlock(n) = par(i, n, *(inp(i)));
+
+//output gain block with n gain controls//
+outputBlock(n) = par(i, n, *(out(i)));
+
+
+//--------------------------------------------------------------------------------------//
+//MTAP PROCESSES
+//DELAY COMBINED WITH OTHER EFFECT DEFINITION
+//--------------------------------------------------------------------------------------//
+//
+//mTDel(n) = n delay lines with reinjection
+//mTDelHarmo(n) = n {delay lines + harmonizers} with reinjection
+//with 2n delay lines and reinjection
+//
+//each of them with two possibilities: 
+//-either autoReinj which means a delay line can reinject sound only into itself (A)
+//-or multReinj which means a delay line can reinject sound into any delay line (M)
+//--------------------------------------------------------------------------------------//
+
+mTDelHarmoM(n) = (inputSort(n) : DelHarmoBlock(n)) ~ (fdToMatrixBlock(n));
+
+//--------------------------------------------------------------------------------------//
+//SAME PROCESSES WITH INPUT AND OUTPUT GAINS (G)
+//--------------------------------------------------------------------------------------//
+//
+//mTDelHarmoMG : 1 inlet to n {delay lines + harmonizers} with multiple reinjection
+//--------------------------------------------------------------------------------------//
+
+//--------------------------------------------------------------------------------------//
+//DELAYS WITH HARMONIZERS
+mTDelHarmoMG(n) = _ <: (inputBlock(n) : mTDelHarmoM(n) : outputBlock(n));
+
+
+//--------------------------------------------------------------------------------------//
+//AMBISONIC ENCODING
+//--------------------------------------------------------------------------------------//
+phasedEncoder(f, p) = rEncoder(3, f, p, 100); //with f as frequency of rotation and p as fixed angle in radians
+phasedEncoderBlock = par(i, 4, phasedEncoder(rotfreq(i), rotphase(i))) :> (_, _, _, _, _, _, _);
+
+//--------------------------------------------------------------------------------------//
+//PROCESSES BEFORE AMBISONIC DECODING
+//--------------------------------------------------------------------------------------//
+//processes on sound guitar
+//level 1: harmo and del, random env, direct guitar//
+guitar_process = _ : highPassFilter <: (*(delharmoGain), *(guitarGain), _) : (mTDelHarmoMG(16), _, mTShortening6(renv_freq, renv_rarefaction, renv_trim));
+
+//level 2: dispatching to spat process (ambisonic model: 7 harmonics and 4 encoders)
+toSpat_process = (spMatrix(17, 11), _, _, _, _, _, _);
+
+//level 3: ambisonics spat itself with encoders
+spat_process = (_, _, _, _, _, _, _, phasedEncoderBlock) : inputSort(7) : (+, +, +, +, +, +, +);
+
+// level 1, 2, 3 combined
+processBeforeDecoding =  guitar_process : toSpat_process : (spat_process, _, _, _, _,  _, _ ) : (_, inputSort(6)) : (_, +, +, +, +, +, +) ;
+//
+//--------------------------------------------------------------------------------------//
+//VARIOUS DECODINGS / RENDERINGS
+//--------------------------------------------------------------------------------------//
+//
+mainDecoder(n, p) = iDecoder(n, la(p), direct, offset, stereo, gain);
+//for the octophonic version
+decoder8 = mainDecoder(3, 8);
+completeProcess8 = processBeforeDecoding : decoder8;
+//for the quadriphonic version
+decoder4 = mainDecoder(3, 4);
+completeProcess4 = processBeforeDecoding : decoder4;
+//for the stereo version
+pmat(a, b, c, d, e, f, g, h) = (e, d, c, b, a, h, g, f);
+stereoRendering = pmat : multiChowningPanner(8, phi0, 1);
+completeProcess2 = completeProcess8 : stereoRendering;
