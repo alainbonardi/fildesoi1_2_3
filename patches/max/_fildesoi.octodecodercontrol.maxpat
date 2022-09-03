@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1420.0, 198.0, 1470.0, 1142.0 ],
+		"rect" : [ 1056.0, 515.0, 1470.0, 1142.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -108,14 +108,13 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 6.499908000000005, 9.666656, 87.0, 20.0 ],
+					"patching_rect" : [ 5.499908000000005, 0.666656, 87.0, 20.0 ],
 					"text" : "general level"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ -20 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -130,7 +129,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 7.499908000000005, 31.666656, 74.0, 72.0 ],
+					"patching_rect" : [ 6.499908000000005, 17.166658686534873, 80.0, 107.999999999999986 ],
 					"viewvisibility" : 1
 				}
 
@@ -896,7 +895,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"hidden" : 1,
-					"midpoints" : [ 16.999908000000005, 332.833335271766657, 36.000000000000057, 332.833335271766657 ],
+					"midpoints" : [ 15.999908000000005, 332.833335271766657, 36.000000000000057, 332.833335271766657 ],
 					"source" : [ "obj-64", 0 ]
 				}
 
@@ -1013,7 +1012,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
 					"hidden" : 1,
-					"midpoints" : [ 242.0, 6.083328, 16.999908000000005, 6.083328 ],
+					"midpoints" : [ 242.0, -0.666670656732563, 15.999908000000005, -0.666670656732563 ],
 					"source" : [ "obj-88", 10 ]
 				}
 
@@ -1150,7 +1149,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "_fildesoi.gaincontrol.maxpat",
-				"bootpath" : "~/Desktop/fildesoi1newversions",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_factory/fildesoi1_2_mac/maxM1IntelAboveMojave/fildesoi1_2_maxM1IntelAboveMojave",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

@@ -40,6 +40,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 181.0, 460.5, 63.0, 22.0 ],
+					"text" : "print toMT"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"linecount" : 3,
 					"maxclass" : "comment",
@@ -281,7 +292,7 @@
 					"patching_rect" : [ 203.75, 91.0, 582.5, 39.0 ],
 					"readonly" : 1,
 					"tabmode" : 0,
-					"text" : "Evt_1",
+					"text" : "FilDeSoi1_Type_Z_then_TAB_twice",
 					"textcolor" : [ 0.967309, 1.0, 0.0, 1.0 ]
 				}
 
@@ -350,7 +361,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 128.999999999999886, 463.5, 45.0, 22.0 ],
+					"patching_rect" : [ 128.999999999999886, 460.5, 45.0, 22.0 ],
 					"text" : "r toMT"
 				}
 
@@ -650,6 +661,16 @@
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"midpoints" : [ 138.499999999999886, 494.75, 123.901794000000052, 494.75 ],
+					"order" : 1,
+					"source" : [ "obj-59", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"midpoints" : [ 138.499999999999886, 492.5, 177.499999999999943, 492.5, 177.499999999999943, 449.5, 190.5, 449.5 ],
+					"order" : 0,
 					"source" : [ "obj-59", 0 ]
 				}
 
