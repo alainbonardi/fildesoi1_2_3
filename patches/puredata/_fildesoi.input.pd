@@ -1,0 +1,111 @@
+#N canvas 1354 478 1206 514 10;
+#X floatatom 13 29 5 0 0 3 channel - - 0;
+#X obj 14 119 adc~ 1;
+#X msg 14 90 set \$1;
+#X obj 213 29 bng 15 250 50 0 empty empty noise 17 7 0 10 #f8fc00 #000000
+#000000;
+#X obj 61 51 hsl 64 15 -78 6 0 0 empty empty empty -2 -8 0 10 #c4c4fc
+#000000 #000000 0 1;
+#X msg 58 -15 0;
+#X floatatom 58 69 5 0 0 1 dB - - 0;
+#X obj 130 51 bng 15 250 50 0 empty empty 0 17 7 0 10 #c4c4fc #000000
+#000000;
+#X obj 176 136 dbtorms;
+#X obj 283 135 noise~;
+#X obj 346 135 t b b;
+#X obj 346 168 del 15;
+#X msg 393 168 1 5;
+#X msg 346 193 0 5;
+#X obj 368 227 line~;
+#X obj 285 256 *~;
+#X obj 285 286 *~ 0.05;
+#X obj 160 332 *~;
+#X obj 148 458 outlet~;
+#X msg 88 95 \$1 100;
+#X obj 172 51 tgl 30 0 empty empty on/off 35 7 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 87 349 line~;
+#X obj 148 406 *~;
+#X obj 58 29 bng 15 250 50 0 empty empty open 17 7 0 10 #00fc04 #000000
+#000000;
+#X obj 109 29 tgl 15 0 empty empty play 17 7 0 10 #00fc04 #000000 #000000
+0 1;
+#X obj 157 29 tgl 15 0 empty empty loop 17 7 0 10 #00fc04 #000000 #000000
+0 1;
+#X obj 514 252 readsf~ 1;
+#X obj 565 280 bang;
+#X obj 565 315 f 0;
+#X text 594 315 loop;
+#X obj 514 77 openpanel;
+#X obj 514 100 list prepend set open;
+#X obj 514 124 list trim;
+#X msg 514 148 open /Users/alainbonardi/Dropbox/ENSEIGNEMENT/PARIS8_MUSIQUE/SAMPLES/captationsInstruments/piano1_mono.wav
+;
+#X text 507 50 open;
+#X obj 441 133 t f b;
+#X obj 202 -18 inlet;
+#X obj 92 -15 loadbang;
+#X obj 257 442 writesf~ 1;
+#X msg 332 93 open;
+#X obj 268 52 tgl 15 0 empty empty rec 17 7 0 10 #fc0400 #000000 #000000
+0 1;
+#X text 266 66 source;
+#X text 266 75 recording;
+#X obj 268 29 bng 15 250 50 0 empty empty open_file 17 7 0 10 #fc0400
+#000000 #000000;
+#X obj 262 -40 inlet;
+#X text 200 -37 on/off;
+#X obj 262 -18 unpack 1 0;
+#X text 331 -19 adc number + db input attenuation;
+#X text 88 12 file player;
+#X text 10 10 micro;
+#X floatatom 176 178 5 0 0 0 - - - 0;
+#X obj 176 106 + 100;
+#X connect 0 0 2 0;
+#X connect 1 0 17 0;
+#X connect 2 0 1 0;
+#X connect 3 0 10 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 51 0;
+#X connect 7 0 5 0;
+#X connect 8 0 50 0;
+#X connect 9 0 15 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 0;
+#X connect 11 0 13 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 1;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 22 0;
+#X connect 19 0 21 0;
+#X connect 20 0 19 0;
+#X connect 21 0 22 1;
+#X connect 22 0 18 0;
+#X connect 22 0 38 0;
+#X connect 23 0 30 0;
+#X connect 24 0 35 0;
+#X connect 25 0 28 1;
+#X connect 26 0 17 0;
+#X connect 26 1 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 24 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 33 0 26 0;
+#X connect 35 0 26 0;
+#X connect 35 1 33 0;
+#X connect 36 0 20 0;
+#X connect 37 0 5 0;
+#X connect 39 0 38 0;
+#X connect 40 0 38 0;
+#X connect 43 0 39 0;
+#X connect 44 0 46 0;
+#X connect 46 0 0 0;
+#X connect 46 1 4 0;
+#X connect 50 0 17 1;
+#X connect 51 0 8 0;
+#X coords 0 -1 1 1 330 80 2 10 10;

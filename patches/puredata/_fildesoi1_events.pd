@@ -1,0 +1,328 @@
+#N canvas 788 391 436 215 12;
+#X obj 28 12 inlet;
+#X floatatom 28 43 5 0 0 0 - - - 0;
+#N canvas 781 194 391 624 spatConfig 0;
+#X obj 59 40 r toSpatConfig;
+#X obj 59 64 sel 1 2;
+#X msg 22 143 \; toMT sp119 1 \; toMT sp137 1 \; toMT sp053 1 \; toMT
+sp157 1 \; toMT sp023 1 \; toMT sp080 1 \; toMT sp047 1 \; toMT sp116
+1 \; toMT sp100 1 \; toMT sp016 1 \; toMT rotfreq3 0 \; toMT rotfreq2
+0.8 \; toMT rotfreq1 -0.4 \; toMT rotfreq0 0.3 \; toMT rotphase3 0
+\; toMT rotphase2 0 \; toMT rotphase1 0 \; toMT rotphase0 0 \; toMT
+sp019 0 \; toMT sp021 0 \; toMT sp040 0 \; toMT sp063 0 \; toMT sp081
+0 \; toMT sp099 0 \; toMT sp117 0 \;;
+#X msg 180 142 \; toMT sp119 1 \; toMT sp137 1 \; toMT sp019 1 \; toMT
+sp021 1 \; toMT sp040 1 \; toMT sp063 1 \; toMT sp081 1 \; toMT sp099
+1 \; toMT sp117 1 \; toMT sp016 1 \; toMT rotfreq3 0 \; toMT rotfreq2
+0.2 \; toMT rotfreq1 -0.25 \; toMT rotfreq0 0.3 \; toMT rotphase3 0
+\; toMT rotphase2 0 \; toMT rotphase1 0 \; toMT rotphase0 0 \; toMT
+sp053 0 \; toMT sp157 0 \; toMT sp023 0 \; toMT sp080 0 \; toMT sp047
+0 \; toMT sp116 0 \; toMT sp100 0 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X restore 150 45 pd spatConfig;
+#N canvas 754 122 1406 833 evt1to12 1;
+#X obj 555 10 inlet;
+#X floatatom 555 41 5 0 0 0 - - - 0;
+#X obj 555 70 select -1 0 1 2 3 4 5 6 7 8 9 10 11 12;
+#N canvas 382 407 745 882 init 0;
+#X obj 66 30 inlet;
+#X msg 66 54 \; toMT d00 300 \; toMT d01 425 \; toMT d02 800 \; toMT
+d03 925 \; toMT d04 1300 \; toMT d05 1800 \; toMT d06 2050 \; toMT
+d07 2300 \; toMT d08 200 \; toMT d09 500 \; toMT d10 600 \; toMT d11
+1000 \; toMT d12 3000 \; toMT d13 2500 \; toMT d14 700 \; toMT d15
+300 \; toMT fd00 0.8 \; toMT fd01 0.9 \; toMT fd02 0.9 \; toMT fd03
+0.9 \; toMT fd04 0.9 \; toMT fd05 0.9 \; toMT fd06 0.9 \; toMT fd07
+0.9 \; toMT fd08 0.5 \; toMT fd09 0.5 \; toMT fd10 0.2 \; toMT fd11
+0.5 \; toMT fd12 0.9 \; toMT fd13 0 \; toMT fd14 0.9 \; toMT fd15 0.9
+\; toMT tr00 386 \; toMT tr01 772 \; toMT tr02 -386 \; toMT tr03 180
+\; toMT tr04 386 \; toMT tr05 -772 \; toMT tr06 -45 \; toMT tr07 180
+\; toMT tr08 0 \; toMT tr09 0 \; toMT tr10 0 \; toMT tr11 0 \; toMT
+tr12 -500 \; toMT tr13 50 \; toMT tr14 -1000 \; toMT tr15 -1200 \;
+toMT xvd00 1 \; toMT xvd01 1 \; toMT xvd02 1 \; toMT xvd03 1 \; toMT
+xvd04 1 \; toMT xvd05 1 \; toMT xvd06 1 \; toMT xvd07 1 \; toMT xvd08
+0 \; toMT xvd09 0 \; toMT xvd10 0 \; toMT xvd11 0 \; toMT xvd12 1 \;
+toMT xvd13 1 \; toMT xvd14 1 \; toMT xvd15 1 \; toMT inp00 0 \; toMT
+inp01 0 \; toMT inp02 0 \; toMT inp03 0 \; toMT inp04 0 \; toMT inp05
+0 \; toMT inp06 0 \; toMT inp07 0 \; toMT inp08 1 \; toMT inp09 1 \;
+toMT inp10 1 \; toMT inp11 1 \; toMT inp12 1 \; toMT inp13 1 \; toMT
+inp14 0.5 \; toMT inp15 1 \; toMT out00 0.25 \; toMT out01 0.3 \; toMT
+out02 0.35 \; toMT out03 0 \; toMT out04 0.25 \; toMT out05 0 \; toMT
+out06 0.9 \; toMT out07 0 \; toMT out08 0 \; toMT out09 0 \; toMT out10
+0 \; toMT out11 0 \; toMT out12 0.4 \; toMT out13 0.4 \; toMT out14
+0.3 \; toMT out15 0.3 \; toMT dStretch 0.8 \; toMT hStretch 4 \; toMT
+hWin 24 \; toMT smoothDuration 50 \; toMT r000 1 \; toMT r016 0 \;
+toMT r032 0 \; toMT r048 0 \; toMT r064 0 \; toMT r080 0 \; toMT r096
+0 \; toMT r112 0 \; toMT r128 0 \; toMT r144 0 \; toMT r160 0 \; toMT
+r176 0 \; toMT r192 0 \; toMT r208 0 \; toMT r224 0 \; toMT r240 0
+\; toMT r001 0 \; toMT r017 1 \; toMT r033 0 \; toMT r049 0 \; toMT
+r065 0 \; toMT r081 0 \; toMT r097 0 \; toMT r113 0 \; toMT r129 0
+\; toMT r145 0 \; toMT r161 0 \; toMT r177 0 \; toMT r193 0 \; toMT
+r209 0 \; toMT r225 0 \; toMT r241 0 \; toMT r002 0 \; toMT r018 0
+\; toMT r034 1 \; toMT r050 0 \; toMT r066 0 \; toMT r082 0 \; toMT
+r098 0 \; toMT r114 0 \; toMT r130 0 \; toMT r146 0 \; toMT r162 0
+\; toMT r178 0 \; toMT r194 0 \; toMT r210 0 \; toMT r226 0 \; toMT
+r242 0 \; toMT r003 0 \; toMT r019 0 \; toMT r035 0 \; toMT r051 1
+\; toMT r067 0 \; toMT r083 0 \; toMT r099 0 \; toMT r115 0 \; toMT
+r131 0 \; toMT r147 0 \; toMT r163 0 \; toMT r179 0 \; toMT r195 0
+\; toMT r211 0 \; toMT r227 0 \; toMT r243 0 \; toMT r004 0 \; toMT
+r020 0 \; toMT r036 0 \; toMT r052 0 \; toMT r068 1 \; toMT r084 0
+\; toMT r100 0 \; toMT r116 0 \; toMT r132 0 \; toMT r148 0 \; toMT
+r164 0 \; toMT r180 0 \; toMT r196 0 \; toMT r212 0 \; toMT r228 0
+\; toMT r244 0 \; toMT r005 0 \; toMT r021 0 \; toMT r037 0 \; toMT
+r053 0 \; toMT r069 0 \; toMT r085 1 \; toMT r101 0 \; toMT r117 0
+\; toMT r133 0 \; toMT r149 0 \; toMT r165 0 \; toMT r181 0 \; toMT
+r197 0 \; toMT r213 0 \; toMT r229 0 \; toMT r245 0 \; toMT r006 0
+\; toMT r022 0 \; toMT r038 0 \; toMT r054 0 \; toMT r070 0 \; toMT
+r086 0 \; toMT r102 1 \; toMT r118 0 \; toMT r134 0 \; toMT r150 0
+\; toMT r166 0 \; toMT r182 0 \; toMT r198 0 \; toMT r214 0 \; toMT
+r230 0 \; toMT r246 0 \; toMT r007 0 \; toMT r023 0 \; toMT r039 0
+\; toMT r055 0 \; toMT r071 0 \; toMT r087 0 \; toMT r103 0 \; toMT
+r119 1 \; toMT r135 0 \; toMT r151 0 \; toMT r167 0 \; toMT r183 0
+\; toMT r199 0 \; toMT r215 0 \; toMT r231 0 \; toMT r247 0 \; toMT
+r008 1 \; toMT r024 0 \; toMT r040 0 \; toMT r056 0 \; toMT r072 1
+\; toMT r088 0 \; toMT r104 0 \; toMT r120 0 \; toMT r136 1 \; toMT
+r152 0 \; toMT r168 0 \; toMT r184 0 \; toMT r200 0 \; toMT r216 0
+\; toMT r232 0 \; toMT r248 0 \; toMT r009 0 \; toMT r025 1 \; toMT
+r041 0 \; toMT r057 0 \; toMT r073 0 \; toMT r089 1 \; toMT r105 0
+\; toMT r121 0 \; toMT r137 0 \; toMT r153 1 \; toMT r169 0 \; toMT
+r185 0 \; toMT r201 0 \; toMT r217 0 \; toMT r233 0 \; toMT r249 0
+\; toMT r010 0 \; toMT r026 0 \; toMT r042 1 \; toMT r058 0 \; toMT
+r074 0 \; toMT r090 0 \; toMT r106 1 \; toMT r122 0 \; toMT r138 0
+\; toMT r154 0 \; toMT r170 1 \; toMT r186 0 \; toMT r202 0 \; toMT
+r218 0 \; toMT r234 0 \; toMT r250 0 \; toMT r011 0 \; toMT r027 0
+\; toMT r043 0 \; toMT r059 1 \; toMT r075 0 \; toMT r091 0 \; toMT
+r107 0 \; toMT r123 1 \; toMT r139 0 \; toMT r155 0 \; toMT r171 0
+\; toMT r187 1 \; toMT r203 0 \; toMT r219 0 \; toMT r235 0 \; toMT
+r251 0 \; toMT r012 0 \; toMT r028 0 \; toMT r044 0 \; toMT r060 0
+\; toMT r076 0 \; toMT r092 0 \; toMT r108 0 \; toMT r124 0 \; toMT
+r140 0 \; toMT r156 0 \; toMT r172 0 \; toMT r188 0 \; toMT r204 0
+\; toMT r220 0 \; toMT r236 0 \; toMT r252 0 \; toMT r013 1 \; toMT
+r029 1 \; toMT r045 1 \; toMT r061 0 \; toMT r077 1 \; toMT r093 0
+\; toMT r109 1 \; toMT r125 0 \; toMT r141 0 \; toMT r157 0 \; toMT
+r173 0 \; toMT r189 0 \; toMT r205 1 \; toMT r221 1 \; toMT r237 1
+\; toMT r253 1 \; toMT r014 0 \; toMT r030 0 \; toMT r046 0 \; toMT
+r062 0 \; toMT r078 0 \; toMT r094 0 \; toMT r110 0 \; toMT r126 0
+\; toMT r142 0 \; toMT r158 0 \; toMT r174 0 \; toMT r190 0 \; toMT
+r206 0 \; toMT r222 0 \; toMT r238 0 \; toMT r254 0 \; toMT r015 0
+\; toMT r031 0 \; toMT r047 0 \; toMT r063 0 \; toMT r079 0 \; toMT
+r095 0 \; toMT r111 0 \; toMT r127 0 \; toMT r143 0 \; toMT r159 0
+\; toMT r175 0 \; toMT r191 0 \; toMT r207 0 \; toMT r223 0 \; toMT
+r239 0 \; toMT r255 0 \; toSpatConfig 1 \; toMT guitarGain -10.2 \;
+toMT delharmoGain 0 \; toMT renv_trim 0 \; toMT renv_freq 13 \; toMT
+renv_short 0.5 \; toMsg FilDeSoi1_Type_Z_then_TAB_twice \;;
+#X connect 0 0 1 0;
+#X restore 28 169 pd init;
+#X msg 64 217 \; sourceOnOff 1 \; toMsg Evt_1 \;;
+#X text 103 197 EVT 1;
+#X text 121 273 EVT 2;
+#X msg 84 293 \; toMT dStretch 0.75 \; toMT hWin 22 \; toMsg Evt_2
+\;;
+#X text 138 368 EVT 3;
+#X msg 100 388 \; toMT dStretch 0.7 \; toMT hWin 24 \; toMsg Evt_3
+\;;
+#X text 157 457 EVT 4;
+#X msg 119 477 \; toMT dStretch 0.8 \; toMT hStretch 2 \; toMT hWin
+22 \; toMT fd13 0.4 \; toMsg Evt_4 \;;
+#X text 832 69 events 1 to 12;
+#X text 173 577 EVT 5;
+#X msg 136 597 \; toMT dStretch 0.8 \; toMT hStretch -1 \; toMT fd13
+0.34 \; toMT hWin 20 \; toMT smoothDuration 30 \; toMsg Evt_5 \;;
+#X msg 317 172 \; toSpatConfig 2 \; toMT dStretch 1.5 \; toMT hStretch
+-0.5 \; toMT fd13 0 \; toMT hWin 24 \; toMT renv_trim -16.2 \; toMT
+renv_freq 13 \; toMT guitarGain -4 \; toMT delharmoGain -4.2 \; toMT
+r013 0 \; toMT r029 0 \; toMT r045 0 \; toMT r077 0 \; toMT r205 0
+\; toMT r221 0 \; toMT r237 0 \; toMT r253 0 \; toMT smoothDuration
+10 \; toMT fd00 0.99 \; toMT fd01 0.99 \; toMT fd02 0.99 \; toMT fd03
+0.99 \; toMT fd04 0.99 \; toMT fd05 0.99 \; toMT fd06 0.99 \; toMT
+fd07 0.99 \; toMT fd12 0.99 \; toMT fd14 0.99 \; toMT fd15 0.99 \;
+toMsg Evt_6 \;;
+#X msg 499 172 \; toMT dStretch 1.5 \; toMT hStretch 2 \; toMT fd13
+0.3 \; toMT hWin 24 \; toMT renv_trim -7.2 \; toMT guitarGain -6 \;
+toMT delharmoGain 0 \; toMT r013 1 \; toMT r029 1 \; toMT r045 1 \;
+toMT r077 1 \; toMT r205 1 \; toMT r221 1 \; toMT r237 1 \; toMT r253
+1 \; toMsg Evt_7 \;;
+#X msg 671 171 \; toMT dStretch 0.75 \; toMT hStretch 3 \; toMT fd13
+0.6 \; toMT renv_trim 0 \; toMsg Evt_8 \;;
+#X msg 987 170 \; toMT dStretch 1 \; toMT fd13 0.4 \; toMsg Evt_10
+\;;
+#X obj 818 762 outlet;
+#X msg 820 171 \; toSpatConfig 1 \; toMT dStretch 0.8 \; toMT hStretch
+-2 \; toMT fd13 0.2 \; toMT hWin 22 \; toMT guitarGain -10.2 \; toMT
+renv_freq 17 \; toMT smoothDuration 1 \; toMT fd00 0.9 \; toMT fd01
+0.9 \; toMT fd02 0.9 \; toMT fd03 0.9 \; toMT fd04 0.9 \; toMT fd05
+0.9 \; toMT fd06 0.9 \; toMT fd07 0.9 \; toMT fd12 0.9 \; toMT fd14
+0.9 \; toMT fd15 0.9 \; toMsg Evt_9 \;;
+#X msg 1120 169 \; toMT dStretch 1.2 \; toMT fd13 0.6 \; toMsg Evt_11
+\;;
+#X msg 1265 168 \; toMT dStretch 0.8 \; toMT fd13 0.4 \; toMsg Evt_12
+\;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 2 4 0;
+#X connect 2 3 7 0;
+#X connect 2 4 9 0;
+#X connect 2 5 11 0;
+#X connect 2 6 14 0;
+#X connect 2 7 15 0;
+#X connect 2 8 16 0;
+#X connect 2 9 17 0;
+#X connect 2 10 20 0;
+#X connect 2 11 18 0;
+#X connect 2 12 21 0;
+#X connect 2 13 22 0;
+#X connect 2 14 19 0;
+#X restore 28 78 pd evt1to12;
+#N canvas 371 181 2091 834 evt13to25 0;
+#X obj 906 35 inlet;
+#X floatatom 906 66 5 0 0 0 - - - 0;
+#X obj 909 250 select 13 14 15 16 17 18 19 20 21 22 23 24 25;
+#X text 1236 248 events 13 to 25;
+#X text 82 393 EVT 13;
+#X msg 39 411 \; toMT dStretch 1 \; toMT fd13 0.2 \; toMsg Evt_13 \;
+;
+#X text 224 393 EVT 14;
+#X msg 181 411 \; toMT dStretch 2 \; toMT fd13 0.1 \; toMsg Evt_14
+\;;
+#X text 363 393 EVT 15;
+#X msg 320 411 \; toMT dStretch 0.2 \; toMT fd13 0.4 \; toMT hStretch
+-2 \; toMsg Evt_15 \;;
+#X text 516 392 EVT 16;
+#X msg 473 410 \; toMT dStretch 0.8 \; toMT hStretch -1 \; toMT fd13
+0.34 \; toMT hWin 20 \; toMT smoothDuration 30 \; toMsg Evt_16 \;;
+#X text 699 391 EVT 17;
+#X msg 656 410 \; toSpatConfig 2 \; toMT dStretch 0.4 \; toMT hStretch
+0.1 \; toMT fd13 0.4 \; toMT fd13 0.8 \; toMT renv_trim -22.2 \; toMT
+fd00 0.99 \; toMT fd01 0.99 \; toMT fd02 0.99 \; toMT fd03 0.99 \;
+toMT fd04 0.99 \; toMT fd05 0.99 \; toMT fd06 0.99 \; toMT fd07 0.99
+\; toMT fd12 0.99 \; toMT fd14 0.99 \; toMT fd15 0.99 \; toMsg Evt_17
+\;;
+#X text 871 392 EVT 18;
+#X msg 828 410 \; toMT dStretch 0.5 \; toMT hStretch 0.15 \; toMT fd13
+0.7 \; toMT hWin 18 \; toMsg Evt_18 \;;
+#X text 1028 392 EVT 19;
+#X text 1183 392 EVT 20;
+#X msg 985 410 \; toMT dStretch 0.6 \; toMT hStretch 0.2 \; toMT fd13
+0.6 \; toMT hWin 20 \; toMsg Evt_19 \;;
+#X msg 1140 410 \; toMT dStretch 0.7 \; toMT hStretch 0.25 \; toMT
+fd13 0.5 \; toMT hWin 22 \; toMsg Evt_20 \;;
+#X text 1338 391 EVT 21;
+#X msg 1295 409 \; toMT dStretch 0.8 \; toMT hStretch 0.3 \; toMT fd13
+0.4 \; toMT hWin 22 \; toMsg Evt_21 \;;
+#X text 1486 391 EVT 22;
+#X text 1634 389 EVT 23;
+#X text 1781 388 EVT 24;
+#X text 1985 389 EVT 25;
+#X msg 2008 408 \; toMT dStretch 0.9 \; toMT hStretch 0.35 \; toMT
+fd13 0.4 \; toMsg Evt_25 \;;
+#X msg 1806 407 \; toSpatConfig 2 \; toMT delharmoGain -4.2 \; toMT
+dStretch 0.8 \; toMT hStretch 0.3 \; toMT fd13 0.3 \; toMT hWin 16
+\; toMT guitarGain -37.2 \; toMT renv_trim -7.2 \; toMT renv_freq 4
+\; toMT smoothDuration 3000 \; toMT fd00 0.99 \; toMT fd01 0.99 \;
+toMT fd02 0.99 \; toMT fd03 0.99 \; toMT fd04 0.99 \; toMT fd05 0.99
+\; toMT fd06 0.99 \; toMT fd07 0.99 \; toMT fd12 0.99 \; toMT fd14
+0.99 \; toMT fd15 0.99 \; toMsg Evt_24 \;;
+#X msg 1611 408 \; toSpatConfig 1 \; toMT out12 1 \; toMT dStretch
+0.8 \; toMT hStretch -1 \; toMT fd13 0.34 \; toMT hWin 20 \; toMT renv_freq
+17 \; toMT renv_trim 0 \; toMT guitarGain -22.2 \; toMT delharmoGain
+-7.22 \; toMT fd00 0.9 \; toMT fd01 0.9 \; toMT fd02 0.9 \; toMT fd03
+0.9 \; toMT fd04 0.9 \; toMT fd05 0.9 \; toMT fd06 0.9 \; toMT fd07
+0.9 \; toMT fd12 0.9 \; toMT fd14 0.9 \; toMT fd15 0.9 \; toMsg Evt_23
+\;;
+#X msg 1443 409 \; toMT dStretch 0.6 \; toMT hStretch 0.6 \; toMT fd13
+0.4 \; toMT hWin 24 \; toMT renv_trim -16.2 \; toMsg Evt_22 \;;
+#X obj 1225 764 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 2 1 7 0;
+#X connect 2 2 9 0;
+#X connect 2 3 11 0;
+#X connect 2 4 13 0;
+#X connect 2 5 15 0;
+#X connect 2 6 18 0;
+#X connect 2 7 19 0;
+#X connect 2 8 21 0;
+#X connect 2 9 29 0;
+#X connect 2 10 28 0;
+#X connect 2 11 27 0;
+#X connect 2 12 26 0;
+#X connect 2 13 30 0;
+#X restore 28 120 pd evt13to25;
+#N canvas -92 319 1907 781 evt25to37 0;
+#X obj 465 38 inlet;
+#X floatatom 465 69 5 0 0 0 - - - 0;
+#X obj 465 128 select 26 27 28 29 30 31 32 33 34 35 36 37;
+#X text 82 393 EVT 26;
+#X msg 39 411 \; toMT dStretch 1 \; toMT hStretch 0.4 \; toMT fd13
+0.5 \; toMT hWin 18 \; toMsg Evt_26 \;;
+#X text 229 392 EVT 27;
+#X text 384 392 EVT 28;
+#X text 531 392 EVT 29;
+#X text 683 392 EVT 30;
+#X msg 186 410 \; toMT dStretch 1.1 \; toMT hStretch 0.45 \; toMT fd13
+0.6 \; toMT hWin 20 \; toMsg Evt_27 \;;
+#X msg 341 410 \; toMT dStretch 1.2 \; toMT hStretch 0.5 \; toMT fd13
+0.7 \; toMT hWin 22 \; toMsg Evt_28 \;;
+#X msg 488 410 \; toMT dStretch 1.3 \; toMT hStretch 0.55 \; toMT fd13
+0.8 \; toMT hWin 24 \; toMsg Evt_29 \;;
+#X msg 640 410 \; toMT dStretch 1.4 \; toMT hStretch 0.6 \; toMT fd13
+0.85 \; toMT hWin 26 \; toMsg Evt_30 \;;
+#X text 831 392 EVT 31;
+#X text 983 392 EVT 32;
+#X msg 788 410 \; toMT dStretch 1.5 \; toMT hStretch 0.65 \; toMT fd13
+0.9 \; toMT hWin 28 \; toMsg Evt_31 \;;
+#X msg 940 410 \; toMT dStretch 0.5 \; toMT hStretch 0.7 \; toMT fd13
+0.1 \; toMT hWin 30 \; toMsg Evt_32 \;;
+#X text 1131 391 EVT 33;
+#X msg 1088 409 \; toSpatConfig 1 \; toMT out12 1 \; toMT dStretch
+0.8 \; toMT hStretch -1 \; toMT fd13 0.34 \; toMT hWin 20 \; toMT renv_freq
+17 \; toMT renv_trim 0 \; toMT guitarGain -28.2 \; toMT delharmoGain
+0 \; toMT smoothDuration 10 \; toMT fd00 0.9 \; toMT fd01 0.9 \; toMT
+fd02 0.9 \; toMT fd03 0.9 \; toMT fd04 0.9 \; toMT fd05 0.9 \; toMT
+fd06 0.9 \; toMT fd07 0.9 \; toMT fd12 0.9 \; toMT fd14 0.9 \; toMT
+fd15 0.9 \; toMsg Evt_33 \;;
+#X text 1313 390 EVT 34;
+#X msg 1270 408 \; toMT dStretch 0.8 \; toMT hStretch 2 \; toMT fd13
+0.4 \; toMT hWin 22 \; toMsg Evt_34 \;;
+#X text 1463 390 EVT 35;
+#X text 1610 390 EVT 36;
+#X text 1757 390 EVT 37;
+#X msg 1420 408 \; toMT dStretch 0.7 \; toMT hWin 24 \; toMsg Evt_35
+\;;
+#X msg 1567 408 \; toMT dStretch 0.75 \; toMT hWin 22 \; toMsg Evt_36
+\;;
+#X msg 1722 408 \; toMT d00 300 \; toMT d01 425 \; toMT d02 800 \;
+toMT d03 925 \; toMT d04 1300 \; toMT d05 1800 \; toMT d06 2000 \;
+toMT d07 2300 \; toMT d08 200 \; toMT d09 500 \; toMT d10 600 \; toMT
+d11 1000 \; toMT d12 3000 \; toMT d13 2500 \; toMT d14 700 \; toMT
+d15 300 \; toMT tr13 50 \; toMT out00 0.25 \; toMT out01 0.3 \; toMT
+out02 0.35 \; toMT out03 0 \; toMT out04 0.25 \; toMT out05 0 \; toMT
+out06 0.9 \; toMT out07 0 \; toMT out08 0 \; toMT out09 0 \; toMT out10
+0 \; toMT out11 0 \; toMT out12 0.4 \; toMT out13 0.4 \; toMT out14
+0.3 \; toMT out15 0.3 \; toMT fd13 0 \; toMT fd10 0.2 \; toMT r013
+1 \; toMT r029 1 \; toMT r045 1 \; toMT r077 1 \; toMT r109 1 \; toMT
+r205 1 \; toMT r221 1 \; toMT r237 1 \; toMT r253 1 \; toMT dStretch
+0.8 \; toMT hStretch 4 \; toMT hWin 24 \; toMT smoothDuration 10 \;
+toMT renv_freq 13 \; toMT guitarGain -34.2 \; toMsg Evt_37 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 9 0;
+#X connect 2 2 10 0;
+#X connect 2 3 11 0;
+#X connect 2 4 12 0;
+#X connect 2 5 15 0;
+#X connect 2 6 16 0;
+#X connect 2 7 18 0;
+#X connect 2 8 20 0;
+#X connect 2 9 24 0;
+#X connect 2 10 25 0;
+#X connect 2 11 26 0;
+#X restore 28 161 pd evt25to37;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;

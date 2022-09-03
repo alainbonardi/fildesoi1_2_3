@@ -1,0 +1,12 @@
+#N canvas 944 616 257 236 12;
+#X obj 59 26 key;
+#X floatatom 59 56 5 0 0 0 - - - 0;
+#X obj 59 94 select 122 9 109;
+#X obj 59 159 outlet;
+#X obj 109 159 outlet;
+#X obj 160 159 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
