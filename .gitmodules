@@ -1,0 +1,3 @@
+[submodule "faustCodes/submodules"]
+	path = faustCodes/submodules
+	url = https://github.com/alainbonardi/abclib
