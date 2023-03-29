@@ -1,0 +1,63 @@
+//--------------------------------------------------------------------------------------//
+//---------------------------------fildesoi3.lib----------------------------------------//
+//------------------------FAUST code for Fil de Soi 3 piece-----------------------------//
+//--------------------for acoustic guitar and live electronics--------------------------//
+//
+//-------------------------BY ALAIN BONARDI - 2022 - 2023-------------------------------//
+//--------------------------------------------------------------------------------------//
+//
+//includes from abclib repository
+//
+import("submodules/faustCodes/library/mm.lib");
+import("submodules/faustCodes/library/hoa2.lib");
+//
+//constants
+maxShift = 2400; //maxim transposition in midicents
+maxSpeed = 15; //maximum speed of rotation in turns per second
+N = 5; //ambisonic order
+//
+//parameters for delay / harmonizer / encoder / decorrelator / gain #1
+//
+//fixed delay duration
+del1 = int(0.25 * ma.SR);
+//variable transposition for the harmonizer
+shift1 = nentry("shift1 [unit:midicents]", -200, -maxShift, maxShift, 0.001);
+//variable rotation speed for the encoder
+speed1 = nentry("speed1 [unit:t.s-1]", 0.015, -maxSpeed, maxSpeed, 0.001);
+//variable decorrelation factor for the decorrelator
+fa1 = nentry("fa1", 0.5, 0, 1, 0.001);
+//variable functiontype for the decorrelator
+ft1 = nentry("ft1", 4, 0, 21, 1);
+//variable output level in dB for the final gain
+gain1 = nentry("gain1 [unit:dB]", -15, -127, 0, 0.001) : si.smoo;
+//
+//parameters for delay / harmonizer / encoder / decorrelator / gain #2
+//
+//fixed delay duration
+del2 = int(0.5 * ma.SR);
+//variable transposition for the harmonizer
+shift2 = nentry("shift2 [unit:midicents]", -2400, -maxShift, maxShift, 0.001);
+//variable rotation speed for the encoder
+speed2 = nentry("speed2 [unit:t.s-1]", -0.015, -maxSpeed, maxSpeed, 0.001);
+//variable decorrelation factor for the decorrelator
+fa2 = nentry("fa2", 0.6, 0, 1, 0.001);
+//variable functiontype for the decorrelator
+ft2 = nentry("ft2", 0, 0, 21, 1);
+//variable output level in dB for the final gain
+gain2 = nentry("gain2 [unit:dB]", 0, -127, 0, 0.001) : si.smoo;
+//
+//parameters for delay / harmonizer / encoder / decorrelator / gain #3
+//
+//fixed delay duration
+del3 = int(1 * ma.SR);
+//variable transposition for the harmonizer
+shift3 = nentry("shift3 [unit:midicents]", 1200, -maxShift, maxShift, 0.001);
+//variable rotation speed for the encoder
+speed3 = nentry("speed3 [unit:t.s-1]", 0.01, -maxSpeed, maxSpeed, 0.001);
+//variable decorrelation factor for the decorrelator
+fa3 = nentry("fa3", 0.5, 0, 1, 0.001);
+//variable functiontype for the decorrelator
+ft3 = nentry("ft3", 0, 0, 21, 1);
+//variable output level in dB for the final gain
+gain3 = nentry("gain3 [unit:dB]", 0, -127, 0, 0.001) : si.smoo;
+//
