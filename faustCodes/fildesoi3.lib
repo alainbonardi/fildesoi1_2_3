@@ -8,14 +8,22 @@
 //
 //includes from abclib repository
 //
+import("hoa.lib");
+import("delays.lib");
+import("signals.lib");
+import("noises.lib");
+import("submodules/faustCodes/library/abc.lib");
 import("submodules/faustCodes/library/mm.lib");
-import("submodules/faustCodes/library/hoa2.lib");
+//import("submodules/faustCodes/library/hoa2.lib");
 //
+//--------------------------------------------------------------------------------------//
 //constants
 maxShift = 2400; //maxim transposition in midicents
 maxSpeed = 15; //maximum speed of rotation in turns per second
+winSize = 50 : pdLineDrive4096; //window size by default for the harmonizers
 N = 5; //ambisonic order
 //
+//--------------------------------------------------------------------------------------//
 //parameters for delay / harmonizer / encoder / decorrelator / gain #1
 //
 //fixed delay duration
@@ -24,10 +32,14 @@ del1 = int(0.25 * ma.SR);
 shift1 = nentry("shift1 [unit:midicents]", -200, -maxShift, maxShift, 0.001);
 //variable rotation speed for the encoder
 speed1 = nentry("speed1 [unit:t.s-1]", 0.015, -maxSpeed, maxSpeed, 0.001);
+//max delay in samples for the decorrelator
+maxdel1 = 24000;
 //variable decorrelation factor for the decorrelator
 fa1 = nentry("fa1", 0.5, 0, 1, 0.001);
 //variable functiontype for the decorrelator
 ft1 = nentry("ft1", 4, 0, 21, 1);
+//feedback for the decorrelator
+fdbk1 = nentry("fdbk1", 0, 0, 1, 0.001);
 //variable output level in dB for the final gain
 gain1 = nentry("gain1 [unit:dB]", -15, -127, 0, 0.001) : si.smoo;
 //
@@ -39,10 +51,14 @@ del2 = int(0.5 * ma.SR);
 shift2 = nentry("shift2 [unit:midicents]", -2400, -maxShift, maxShift, 0.001);
 //variable rotation speed for the encoder
 speed2 = nentry("speed2 [unit:t.s-1]", -0.015, -maxSpeed, maxSpeed, 0.001);
+//max delay in samples for the decorrelator
+maxdel2 = 96000;
 //variable decorrelation factor for the decorrelator
 fa2 = nentry("fa2", 0.6, 0, 1, 0.001);
 //variable functiontype for the decorrelator
 ft2 = nentry("ft2", 0, 0, 21, 1);
+//feedback for the decorrelator
+fdbk2 = nentry("fdbk2", 0.1, 0, 1, 0.001);
 //variable output level in dB for the final gain
 gain2 = nentry("gain2 [unit:dB]", 0, -127, 0, 0.001) : si.smoo;
 //
@@ -54,10 +70,55 @@ del3 = int(1 * ma.SR);
 shift3 = nentry("shift3 [unit:midicents]", 1200, -maxShift, maxShift, 0.001);
 //variable rotation speed for the encoder
 speed3 = nentry("speed3 [unit:t.s-1]", 0.01, -maxSpeed, maxSpeed, 0.001);
+//max delay in samples for the decorrelator
+maxdel3 = 24000;
 //variable decorrelation factor for the decorrelator
 fa3 = nentry("fa3", 0.5, 0, 1, 0.001);
 //variable functiontype for the decorrelator
 ft3 = nentry("ft3", 0, 0, 21, 1);
+//feedback for the decorrelator
+fdbk3 = nentry("fdbk3", 0, 0, 1, 0.001);
 //variable output level in dB for the final gain
 gain3 = nentry("gain3 [unit:dB]", 0, -127, 0, 0.001) : si.smoo;
 //
+//parameters to control the nail glissando synthesis
+//
+//fa is the factor that drives the sweeping of harmonics
+favarfreq = hslider("v:nail/v:factor/favarfreq", 0.05, 0, 100, 0.01);
+favaramp = hslider("v:nail/v:factor/favaramp", 0, 0, 1, 0.001);
+fa = 1 + favaramp * os.osccos(favarfreq);
+//control of filters used in substractive synthesis
+resq = nentry("v:nail/v:filters/resq", 1000., 0., 1000., 0.1);//reson quality factor//
+resg = nentry("v:nail/v:filters/resg", 0.1, 0., 1., 0.01);//reson gain//
+//
+synthgain = nentry("v:nail/synthgain [unit:dB]", -30, -127, 18, 0.01) : ba.db2linear : si.smoo;
+//
+//--------------------------------------------------------------------------------------//
+//Synthesis of the nail glissando sound
+//22 frequencies and amplitudes read from the analysis of the sound of nail glissando on a bass string of an acoustic guitar
+//for amps we use the waveform function since the ba.take cannot be used with a formula as ma.modulo(int(fa * i), 22)
+freqs = (47, 57, 67, 77, 127, 257, 337, 437, 527, 637, 698, 838, 938, 988, 1098, 1248, 1508, 1949, 2059, 2349, 2539, 2739);
+amps = waveform{0.112, 0.158, 0.178, 0.224, 0.398, 1, 0.501, 0.631, 1, 0.282, 0.398, 0.1, 0.2, 0.158, 0.224, 0.178, 0.178, 0.141, 0.126, 0.2, 0.178, 0.112};
+//
+getFreq(i) = ba.take(i+1, freqs);
+getAmp(i) = (amps, ma.modulo(int(fa * i), 22)) : rdtable;
+//
+//A decorrelated of 22 noise signals feeds the filters that are tuned as the frequencies and amplitudes correspoding to the arrays.
+nailGlissandoSynthesis = no.multinoise(22) : par(i, 22, (fi.resonbp(getFreq(i), resq, resg) : *(getAmp(i)))) :> (*(gain));
+
+//--------------------------------------------------------------------------------------//
+//Processes on the guitar
+//
+//process encoder / decorrelator / gain #1
+encoderDecorrelatorGain1 = ho.rEncoder(N, speed1, 0, 20) : ho.fxDecorrelation(N, maxdel1, 10, fa1, fdbk1, ft1) : abc_gainline(2*N+1, gain1);
+//process encoder / decorrelator / gain #2
+encoderDecorrelatorGain2 = ho.rEncoder(N, speed2, 0, 20) : ho.fxDecorrelation(N, maxdel2, 10, fa2, fdbk2, ft2) : abc_gainline(2*N+1, gain2);
+//process encoder / decorrelator / gain #3
+encoderDecorrelatorGain3 = ho.rEncoder(N, speed3, 0, 20) : ho.fxDecorrelation(N, maxdel3, 10, fa3, fdbk3, ft3) : abc_gainline(2*N+1, gain3);
+//
+//set of 3 delays on the input
+threeDelays = _ <: (de.delay(ma.SR, del1), de.delay(ma.SR, del2), de.delay(ma.SR, del3));
+//set of 3 harmonizers after the delays
+threeHarmos = (harmonizer(shift1, winSize, 1), harmonizer(shift2, winSize, 1), harmonizer(shift3, winSize, 1));
+//
+guitarProcess = threeDelays : threeHarmos : (encoderDecorrelatorGain1, encoderDecorrelatorGain3, encoderDecorrelatorGain3) :> si.bus(2*N+1);
