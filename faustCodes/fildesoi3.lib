@@ -8,17 +8,12 @@
 //
 //includes from abclib repository
 //
-import("hoa.lib");
-import("delays.lib");
-import("signals.lib");
-import("noises.lib");
-import("submodules/faustCodes/library/abc.lib");
+import("submodules/faustCodes/library/hoa2.lib");
 import("submodules/faustCodes/library/mm.lib");
-//import("submodules/faustCodes/library/hoa2.lib");
 //
 //--------------------------------------------------------------------------------------//
 //constants
-maxShift = 2400; //maxim transposition in midicents
+maxShift = 2400; //maximum transposition in midicents
 maxSpeed = 15; //maximum speed of rotation in turns per second
 winSize = 50 : pdLineDrive4096; //window size by default for the harmonizers
 N = 5; //ambisonic order
@@ -29,69 +24,69 @@ N = 5; //ambisonic order
 //fixed delay duration
 del1 = int(0.25 * ma.SR);
 //variable transposition for the harmonizer
-shift1 = nentry("shift1 [unit:midicents]", -200, -maxShift, maxShift, 0.001);
+shift1 = hslider("h:fds3/v:block1/v:harmo1/shift1 [unit:midicents]", -200, -maxShift, maxShift, 0.001);
 //variable rotation speed for the encoder
-speed1 = nentry("speed1 [unit:t.s-1]", 0.015, -maxSpeed, maxSpeed, 0.001);
+speed1 = hslider("h:fds3/v:block1/v:encoder1/speed1 [unit:t.s-1]", 0.015, -maxSpeed, maxSpeed, 0.001);
 //max delay in samples for the decorrelator
 maxdel1 = 24000;
 //variable decorrelation factor for the decorrelator
-fa1 = nentry("fa1", 0.5, 0, 1, 0.001);
+fa1 = hslider("h:fds3/v:block1/v:decorrelator1/fa1", 0.5, 0, 1, 0.001);
 //variable functiontype for the decorrelator
-ft1 = nentry("ft1", 4, 0, 21, 1);
+ft1 = nentry("h:fds3/v:block1/v:decorrelator1/ft1", 4, 0, 21, 1);
 //feedback for the decorrelator
-fdbk1 = nentry("fdbk1", 0, 0, 1, 0.001);
+fdbk1 = hslider("h:fds3/v:block1/v:decorrelator1/fdbk1", 0, 0, 1, 0.001);
 //variable output level in dB for the final gain
-gain1 = nentry("gain1 [unit:dB]", -15, -127, 0, 0.001) : si.smoo;
+gain1 = hslider("h:fds3/v:block1/v:level1/gain1 [unit:dB]", -15, -127, 0, 0.001) : ba.db2linear : si.smoo;
 //
 //parameters for delay / harmonizer / encoder / decorrelator / gain #2
 //
 //fixed delay duration
 del2 = int(0.5 * ma.SR);
 //variable transposition for the harmonizer
-shift2 = nentry("shift2 [unit:midicents]", -2400, -maxShift, maxShift, 0.001);
+shift2 = hslider("h:fds3/v:block2/v:harmo2/shift2 [unit:midicents]", -2400, -maxShift, maxShift, 0.001);
 //variable rotation speed for the encoder
-speed2 = nentry("speed2 [unit:t.s-1]", -0.015, -maxSpeed, maxSpeed, 0.001);
+speed2 = hslider("h:fds3/v:block2/v:encoder2/speed2 [unit:t.s-1]", -0.015, -maxSpeed, maxSpeed, 0.001);
 //max delay in samples for the decorrelator
 maxdel2 = 96000;
 //variable decorrelation factor for the decorrelator
-fa2 = nentry("fa2", 0.6, 0, 1, 0.001);
+fa2 = hslider("h:fds3/v:block2/v:decorrelator2/fa2", 0.6, 0, 1, 0.001);
 //variable functiontype for the decorrelator
-ft2 = nentry("ft2", 0, 0, 21, 1);
+ft2 = nentry("h:fds3/v:block2/v:decorrelator2/ft2", 0, 0, 21, 1);
 //feedback for the decorrelator
-fdbk2 = nentry("fdbk2", 0.1, 0, 1, 0.001);
+fdbk2 = hslider("h:fds3/v:block2/v:decorrelator2/fdbk2", 0.1, 0, 1, 0.001);
 //variable output level in dB for the final gain
-gain2 = nentry("gain2 [unit:dB]", 0, -127, 0, 0.001) : si.smoo;
+gain2 = hslider("h:fds3/v:block2/v:level2/gain2 [unit:dB]", 0, -127, 0, 0.001) : ba.db2linear : si.smoo;
 //
 //parameters for delay / harmonizer / encoder / decorrelator / gain #3
 //
 //fixed delay duration
 del3 = int(1 * ma.SR);
 //variable transposition for the harmonizer
-shift3 = nentry("shift3 [unit:midicents]", 1200, -maxShift, maxShift, 0.001);
+shift3 = hslider("h:fds3/v:block3/v:harmo3/shift3 [unit:midicents]", 1200, -maxShift, maxShift, 0.001);
 //variable rotation speed for the encoder
-speed3 = nentry("speed3 [unit:t.s-1]", 0.01, -maxSpeed, maxSpeed, 0.001);
+speed3 = hslider("h:fds3/v:block3/v:encoder3/speed3 [unit:t.s-1]", 0.01, -maxSpeed, maxSpeed, 0.001);
 //max delay in samples for the decorrelator
 maxdel3 = 24000;
 //variable decorrelation factor for the decorrelator
-fa3 = nentry("fa3", 0.5, 0, 1, 0.001);
+fa3 = hslider("h:fds3/v:block3/v:decorrelator3/fa3", 0.5, 0, 1, 0.001);
 //variable functiontype for the decorrelator
-ft3 = nentry("ft3", 0, 0, 21, 1);
+ft3 = nentry("h:fds3/v:block3/v:decorrelator3/ft3", 0, 0, 21, 1);
 //feedback for the decorrelator
-fdbk3 = nentry("fdbk3", 0, 0, 1, 0.001);
+fdbk3 = hslider("h:fds3/v:block3/v:decorrelator3/fdbk3", 0, 0, 1, 0.001);
 //variable output level in dB for the final gain
-gain3 = nentry("gain3 [unit:dB]", 0, -127, 0, 0.001) : si.smoo;
+gain3 = hslider("h:fds3/v:block3/v:level3/gain3 [unit:dB]", 0, -127, 0, 0.001) : ba.db2linear : si.smoo;
 //
 //parameters to control the nail glissando synthesis
 //
 //fa is the factor that drives the sweeping of harmonics
-favarfreq = hslider("v:nail/v:factor/favarfreq", 0.05, 0, 100, 0.01);
-favaramp = hslider("v:nail/v:factor/favaramp", 0, 0, 1, 0.001);
+favarfreq = hslider("h:fds3/v:glissandonail/v:factor/favarfreq", 0.05, 0, 100, 0.01);
+favaramp = hslider("h:fds3/v:glissandonail/v:factor/favaramp", 0.1, 0, 1, 0.001);
 fa = 1 + favaramp * os.osccos(favarfreq);
 //control of filters used in substractive synthesis
-resq = nentry("v:nail/v:filters/resq", 1000., 0., 1000., 0.1);//reson quality factor//
-resg = nentry("v:nail/v:filters/resg", 0.1, 0., 1., 0.01);//reson gain//
+resq = hslider("h:fds3/v:glissandonail/v:filters/resq", 1000., 0., 1000., 0.1);//reson quality factor//
+resg = hslider("h:fds3/v:glissandonail/v:filters/resg", 0.1, 0., 1., 0.01);//reson gain//
 //
-synthgain = nentry("v:nail/synthgain [unit:dB]", -30, -127, 18, 0.01) : ba.db2linear : si.smoo;
+synthgain = hslider("h:fds3/v:glissandonail/v:level/synthgain [unit:dB]", -127, -127, 18, 0.01) : ba.db2linear : si.smoo;
 //
 //--------------------------------------------------------------------------------------//
 //Synthesis of the nail glissando sound
@@ -104,23 +99,23 @@ getFreq(i) = ba.take(i+1, freqs);
 getAmp(i) = (amps, ma.modulo(int(fa * i), 22)) : rdtable;
 //
 //A decorrelated of 22 noise signals feeds the filters that are tuned as the frequencies and amplitudes correspoding to the arrays.
-nailGlissandoSynthesis = no.multinoise(22) : par(i, 22, (fi.resonbp(getFreq(i), resq, resg) : *(getAmp(i)))) :> (*(gain));
+nailGlissandoSynthesis = no.multinoise(22) : par(i, 22, (fi.resonbp(getFreq(i), resq, resg) : *(getAmp(i)))) :> (*(synthgain));
 
 //--------------------------------------------------------------------------------------//
 //Processes on the guitar
 //
 //process encoder / decorrelator / gain #1
-encoderDecorrelatorGain1 = ho.rEncoder(N, speed1, 0, 20) : ho.fxDecorrelation(N, maxdel1, 10, fa1, fdbk1, ft1) : abc_gainline(2*N+1, gain1);
+encoderDecorrelatorGain1 = ho.rEncoder(N, speed1, 0, 20) : fxDecorrelation(N, maxdel1, 10, fa1, fdbk1, ft1) : par(i, 2*N+1, *(gain1));
 //process encoder / decorrelator / gain #2
-encoderDecorrelatorGain2 = ho.rEncoder(N, speed2, 0, 20) : ho.fxDecorrelation(N, maxdel2, 10, fa2, fdbk2, ft2) : abc_gainline(2*N+1, gain2);
+encoderDecorrelatorGain2 = ho.rEncoder(N, speed2, 0, 20) : fxDecorrelation(N, maxdel2, 10, fa2, fdbk2, ft2) : par(i, 2*N+1, *(gain2));
 //process encoder / decorrelator / gain #3
-encoderDecorrelatorGain3 = ho.rEncoder(N, speed3, 0, 20) : ho.fxDecorrelation(N, maxdel3, 10, fa3, fdbk3, ft3) : abc_gainline(2*N+1, gain3);
+encoderDecorrelatorGain3 = ho.rEncoder(N, speed3, 0, 20) : fxDecorrelation(N, maxdel3, 10, fa3, fdbk3, ft3) : par(i, 2*N+1, *(gain3));
 //
 //set of 3 delays on the input
 threeDelays = _ <: (de.delay(ma.SR, del1), de.delay(ma.SR, del2), de.delay(ma.SR, del3));
 //set of 3 harmonizers after the delays
 threeHarmos = (harmonizer(shift1, winSize, 1), harmonizer(shift2, winSize, 1), harmonizer(shift3, winSize, 1));
 //
-guitarProcess = threeDelays : threeHarmos : (encoderDecorrelatorGain1, encoderDecorrelatorGain3, encoderDecorrelatorGain3) :> si.bus(2*N+1);
+guitarProcess = threeDelays : threeHarmos : (encoderDecorrelatorGain1, encoderDecorrelatorGain2, encoderDecorrelatorGain3) :> si.bus(2*N+1);
 //
-globalProcess = (_, nailGlissandoSynthesis) : guitarProcess;
+globalProcess = (_, nailGlissandoSynthesis) : + : guitarProcess;
