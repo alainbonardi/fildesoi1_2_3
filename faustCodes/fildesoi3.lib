@@ -122,3 +122,5 @@ threeDelays = _ <: (de.delay(ma.SR, del1), de.delay(ma.SR, del2), de.delay(ma.SR
 threeHarmos = (harmonizer(shift1, winSize, 1), harmonizer(shift2, winSize, 1), harmonizer(shift3, winSize, 1));
 //
 guitarProcess = threeDelays : threeHarmos : (encoderDecorrelatorGain1, encoderDecorrelatorGain3, encoderDecorrelatorGain3) :> si.bus(2*N+1);
+//
+globalProcess = (_, nailGlissandoSynthesis) : guitarProcess;
