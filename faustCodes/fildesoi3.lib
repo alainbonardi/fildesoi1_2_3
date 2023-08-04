@@ -8,7 +8,7 @@
 //
 //includes from abclib repository
 //
-import("submodules/faustCodes/library/hoa2.lib");
+//import("submodules/faustCodes/library/hoa2.lib");
 import("submodules/faustCodes/library/mm.lib");
 //
 //--------------------------------------------------------------------------------------//
@@ -18,6 +18,23 @@ maxSpeed = 15; //maximum speed of rotation in turns per second
 winSize = 50 : pdLineDrive4096; //window size by default for the harmonizers
 N = 5; //ambisonic order
 //
+//--------------------------------------------------------------------------------------//
+//CONTROL PARAMETERS FOR DECODING
+//--------------------------------------------------------------------------------------//
+direct = (2 * nentry("h:decoder/v:general/[0]directangles", 1, 0, 1, 1) - 1) : si.smoo; 
+offset = hslider("h:decoder/v:general/[1]angularoffset[unit:deg]", 0, -180, 180, 1) : si.smoo;
+gain = hslider("h:decoder/v:general/[3]gain[unit:dB]", 0, -127, 18, 0.01) : dbtogain;
+stereo = nentry("h:decoder/v:general/[4]stereo", 0, 0, 1, 1) : si.smoo;
+//the angle of the the ith loudspeaker among nls loudspeakers, expressed in degrees for the end-user
+a(i, nls) = nentry("h:decoder/v:angles/a%2i [unit:deg]", i * 360 / nls, -360, 360, 1);
+//la = list of angles//
+la(p) = par(i, p, a(i, p));
+
+//for stereophonic projection
+//phi0 is the half angle of the stereophony, between the left speaker and the front line of the listener//
+phi0 = hslider("v:chopan/phi0 [unit:deg]", 30, 1, 90, 1) : si.smoo;
+//
+
 //--------------------------------------------------------------------------------------//
 //parameters for delay / harmonizer / encoder / decorrelator / gain #1
 //
@@ -105,11 +122,11 @@ nailGlissandoSynthesis = no.multinoise(22) : par(i, 22, (fi.resonbp(getFreq(i), 
 //Processes on the guitar
 //
 //process encoder / decorrelator / gain #1
-encoderDecorrelatorGain1 = ho.rEncoder(N, speed1, 0, 20) : fxDecorrelation(N, maxdel1, 10, fa1, fdbk1, ft1) : par(i, 2*N+1, *(gain1));
+encoderDecorrelatorGain1 = ho.rEncoder(N, speed1, 0, 20) : ho.fxDecorrelation(N, maxdel1, 10, fa1, fdbk1, ft1) : par(i, 2*N+1, *(gain1));
 //process encoder / decorrelator / gain #2
-encoderDecorrelatorGain2 = ho.rEncoder(N, speed2, 0, 20) : fxDecorrelation(N, maxdel2, 10, fa2, fdbk2, ft2) : par(i, 2*N+1, *(gain2));
+encoderDecorrelatorGain2 = ho.rEncoder(N, speed2, 0, 20) : ho.fxDecorrelation(N, maxdel2, 10, fa2, fdbk2, ft2) : par(i, 2*N+1, *(gain2));
 //process encoder / decorrelator / gain #3
-encoderDecorrelatorGain3 = ho.rEncoder(N, speed3, 0, 20) : fxDecorrelation(N, maxdel3, 10, fa3, fdbk3, ft3) : par(i, 2*N+1, *(gain3));
+encoderDecorrelatorGain3 = ho.rEncoder(N, speed3, 0, 20) : ho.fxDecorrelation(N, maxdel3, 10, fa3, fdbk3, ft3) : par(i, 2*N+1, *(gain3));
 //
 //set of 3 delays on the input
 threeDelays = _ <: (de.delay(ma.SR, del1), de.delay(ma.SR, del2), de.delay(ma.SR, del3));
@@ -118,4 +135,23 @@ threeHarmos = (harmonizer(shift1, winSize, 1), harmonizer(shift2, winSize, 1), h
 //
 guitarProcess = threeDelays : threeHarmos : (encoderDecorrelatorGain1, encoderDecorrelatorGain2, encoderDecorrelatorGain3) :> si.bus(2*N+1);
 //
-globalProcess = (_, nailGlissandoSynthesis) : + : guitarProcess;
+processBeforeDecoding = (_, nailGlissandoSynthesis) : + : guitarProcess;
+
+//--------------------------------------------------------------------------------------//
+//VARIOUS DECODINGS / RENDERINGS
+//--------------------------------------------------------------------------------------//
+//
+mainDecoder(n, p) = ho.iDecoder(n, la(p), direct, offset, stereo, gain);
+//for the 12 loudspeaker version (for instance in the MSH Paris Nord Concert Hall)
+decoder12 = mainDecoder(N, 12);
+completeProcess12 = processBeforeDecoding : decoder12;
+//for the octophonic version
+decoder8 = mainDecoder(N, 8);
+completeProcess8 = processBeforeDecoding : decoder8;
+//for the quadriphonic version
+decoder4 = mainDecoder(N, 4);
+completeProcess4 = processBeforeDecoding : decoder4;
+//for the stereo version
+pmat(a, b, c, d, e, f, g, h, i, j, k, l) = (f, e, d, c, b, a, l, k, j, i, h, g);
+stereoRendering = pmat : multiChowningPanner(12, phi0, 1);
+completeProcess2 = completeProcess12 : stereoRendering;

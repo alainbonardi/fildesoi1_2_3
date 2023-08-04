@@ -6,4 +6,4 @@
 //
 import("stdfaust.lib");
 import("fildesoi3.lib");
-process = globalProcess;
+process = completeProcess12;

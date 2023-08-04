@@ -9,7 +9,6 @@
 //includes from abclib repository
 //
 import("submodules/faustCodes/library/mm.lib");
-import("submodules/faustCodes/library/hoa2.lib");
 //
 //--------------------------------------------------------------------------------------//
 //FEEDBACK REINJECTION MATRIX N x N
@@ -201,7 +200,7 @@ mTDelHarmoMG(n) = _ <: (inputBlock(n) : mTDelHarmoM(n) : outputBlock(n));
 //--------------------------------------------------------------------------------------//
 //AMBISONIC ENCODING
 //--------------------------------------------------------------------------------------//
-phasedEncoder(f, p) = rEncoder(3, f, p, 100); //with f as frequency of rotation and p as fixed angle in radians
+phasedEncoder(f, p) = ho.rEncoder(3, f, p, 100); //with f as frequency of rotation and p as fixed angle in radians
 phasedEncoderBlock = par(i, 4, phasedEncoder(rotfreq(i), rotphase(i))) :> (_, _, _, _, _, _, _);
 
 //--------------------------------------------------------------------------------------//
@@ -224,7 +223,7 @@ processBeforeDecoding =  guitar_process : toSpat_process : (spat_process, _, _, 
 //VARIOUS DECODINGS / RENDERINGS
 //--------------------------------------------------------------------------------------//
 //
-mainDecoder(n, p) = iDecoder(n, la(p), direct, offset, stereo, gain);
+mainDecoder(n, p) = ho.iDecoder(n, la(p), direct, offset, stereo, gain);
 //for the octophonic version
 decoder8 = mainDecoder(3, 8);
 completeProcess8 = processBeforeDecoding : decoder8;
