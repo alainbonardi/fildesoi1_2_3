@@ -105,6 +105,9 @@ resg = hslider("h:fds3/v:glissandonail/v:filters/resg", 0.1, 0., 1., 0.01);//res
 //
 synthgain = hslider("h:fds3/v:glissandonail/v:level/synthgain [unit:dB]", -127, -127, 18, 0.01) : ba.db2linear : si.smoo;
 //
+//level of direct sound of the guitar sent to harmonic 0
+gdirect = hslider("h:fds3/v:sondirect/gdirect", 0., 0., 1, 0.001) : si.smoo;
+//
 //--------------------------------------------------------------------------------------//
 //Synthesis of the nail glissando sound
 //22 frequencies and amplitudes read from the analysis of the sound of nail glissando on a bass string of an acoustic guitar
@@ -135,7 +138,7 @@ threeHarmos = (harmonizer(shift1, winSize, 1), harmonizer(shift2, winSize, 1), h
 //
 guitarProcess = threeDelays : threeHarmos : (encoderDecorrelatorGain1, encoderDecorrelatorGain2, encoderDecorrelatorGain3) :> si.bus(2*N+1);
 //
-processBeforeDecoding = (_, nailGlissandoSynthesis) : + : guitarProcess;
+processBeforeDecoding = ((_ <: (_, _)), nailGlissandoSynthesis) : (_, +) : (*(gdirect), guitarProcess) : (+, si.bus(2*N));
 
 //--------------------------------------------------------------------------------------//
 //VARIOUS DECODINGS / RENDERINGS
