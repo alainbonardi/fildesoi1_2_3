@@ -10,6 +10,7 @@
 //
 //import("submodules/faustCodes/library/hoa2.lib");
 import("submodules/faustCodes/library/mm.lib");
+import("submodules/faustCodes/library/hoa2.lib");
 //
 //--------------------------------------------------------------------------------------//
 //constants
@@ -144,7 +145,9 @@ processBeforeDecoding = ((_ <: (_, _)), nailGlissandoSynthesis) : (_, +) : (*(gd
 //VARIOUS DECODINGS / RENDERINGS
 //--------------------------------------------------------------------------------------//
 //
-mainDecoder(n, p) = ho.iDecoder(n, la(p), direct, offset, stereo, gain);
+//we provisionnally use the iDecoder from hoa2.lib
+//
+mainDecoder(n, p) = iDecoder(n, la(p), direct, offset, stereo, gain);
 //for the 12 loudspeaker version (for instance in the MSH Paris Nord Concert Hall)
 decoder12 = mainDecoder(N, 12);
 completeProcess12 = processBeforeDecoding : decoder12;
