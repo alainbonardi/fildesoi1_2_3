@@ -8,9 +8,8 @@
 //
 //includes from abclib repository
 //
-//import("submodules/faustCodes/library/hoa2.lib");
-import("submodules/faustCodes/library/mm.lib");
 import("submodules/faustCodes/library/hoa2.lib");
+import("submodules/faustCodes/library/mm.lib");
 //
 //--------------------------------------------------------------------------------------//
 //constants

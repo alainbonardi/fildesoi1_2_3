@@ -8,6 +8,7 @@
 //
 //includes from abclib repository
 //
+import("submodules/faustCodes/library/hoa2.lib");
 import("submodules/faustCodes/library/mm.lib");
 //
 //--------------------------------------------------------------------------------------//
@@ -223,7 +224,7 @@ processBeforeDecoding =  guitar_process : toSpat_process : (spat_process, _, _, 
 //VARIOUS DECODINGS / RENDERINGS
 //--------------------------------------------------------------------------------------//
 //
-mainDecoder(n, p) = ho.iDecoder(n, la(p), direct, offset, stereo, gain);
+mainDecoder(n, p) = iDecoder(n, la(p), direct, offset, stereo, gain);
 //for the octophonic version
 decoder8 = mainDecoder(3, 8);
 completeProcess8 = processBeforeDecoding : decoder8;
