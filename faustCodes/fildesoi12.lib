@@ -34,7 +34,7 @@ millisec = ma.SR / 1000.0;
 
 renv_rarefaction = hslider("h:RandomEnv/renv_short", 0.5, 0, 1, 0.01);
 renv_freq = nentry("h:RandomEnv/renv_freq", 10, 0.01, 100, 0.01);
-renv_trim = hslider("h:RandomEnv/renv_trim", 0, -127, 18, 0.01) : dbtogain;
+renv_trim = hslider("h:RandomEnv/renv_trim", 0, -127, 18, 0.01) : db2gain;
 
 //--------------------------------------------------------------------------------------//
 //CONTROL PARAMETERS FOR DELHARMO PROCESSES
@@ -69,8 +69,8 @@ out(ind) = hslider("h:Lines/v:Line_output/out%2ind [6]", 1, 0, 1, 0.01):smoothLi
 //--------------------------------------------------------------------------------------//
 //CONTROL PARAMETERS GAINS
 //--------------------------------------------------------------------------------------//
-guitarGain = hslider("h:Global_Parameters/guitarGain [7]", -34, -127, 18, 0.01) : dbtogain;
-delharmoGain = hslider("h:Global_Parameters/delharmoGain [7]", 0, -127, 18, 0.01) : dbtogain;
+guitarGain = hslider("h:Global_Parameters/guitarGain [7]", -34, -127, 18, 0.01) : db2gain;
+delharmoGain = hslider("h:Global_Parameters/delharmoGain [7]", 0, -127, 18, 0.01) : db2gain;
 
 //--------------------------------------------------------------------------------------//
 //CONTROL PARAMETERS FOR ENCODERS
@@ -85,7 +85,7 @@ rotphase(ind) = hslider("h:Encoders/rotphase%ind", 0, 0, 1, 0.01) * 2 * ma.PI;
 //--------------------------------------------------------------------------------------//
 direct = (2 * nentry("h:decoder/v:general/[0]directangles", 1, 0, 1, 1) - 1) : si.smoo; 
 offset = hslider("h:decoder/v:general/[1]angularoffset[unit:deg]", 0, -180, 180, 1) : si.smoo;
-gain = hslider("h:decoder/v:general/[3]gain[unit:dB]", 0, -127, 18, 0.01) : dbtogain;
+gain = hslider("h:decoder/v:general/[3]gain[unit:dB]", 0, -127, 18, 0.01) : db2gain;
 stereo = nentry("h:decoder/v:general/[4]stereo", 0, 0, 1, 1) : si.smoo;
 //the angle of the the ith loudspeaker among nls loudspeakers, expressed in degrees for the end-user
 a(i, nls) = nentry("h:decoder/v:angles/a%2i [unit:deg]", i * 360 / nls, -360, 360, 1);
