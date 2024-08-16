@@ -26,7 +26,7 @@ offset = hslider("h:decoder/v:general/[1]angularoffset[unit:deg]", 0, -180, 180,
 gain = hslider("h:decoder/v:general/[3]gain[unit:dB]", 0, -127, 18, 0.01) : db2gain;
 stereo = nentry("h:decoder/v:general/[4]stereo", 0, 0, 1, 1) : si.smoo;
 //the angle of the the ith loudspeaker among nls loudspeakers, expressed in degrees for the end-user
-a(i, nls) = nentry("h:decoder/v:angles/a%i [unit:deg]", i * 360 / nls, -360, 360, 1);
+a(i, nls) = nentry("h:decoder/v:angles/a%2i [unit:deg]", i * 360 / nls, -360, 360, 1);
 //la = list of angles//
 la(p) = par(i, p, a(i, p));
 
