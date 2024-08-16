@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 407.0, 358.0, 952.0, 696.0 ],
+		"rect" : [ 1136.0, 390.0, 952.0, 696.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,67 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"channels" : 2,
+					"id" : "obj-14",
+					"lastchannelcount" : 2,
+					"maxclass" : "mc.live.gain~",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 75.0, 462.386549293994904, 48.0, 136.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_longname" : "mc.live.gain~",
+							"parameter_mmax" : 6.0,
+							"parameter_mmin" : -70.0,
+							"parameter_modmode" : 3,
+							"parameter_shortname" : "mc.live.gain~",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 4
+						}
+
+					}
+,
+					"varname" : "mc.live.gain~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ -10, 0 ],
+					"bgmode" : 0,
+					"border" : 1,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-11",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "_fildesoi.gaincontrol.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 228.0, 265.0, 74.0, 110.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 135.863636363636431, 480.886566400527954, 54.0, 22.0 ],
+					"text" : "mc.dac~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontsize" : 16.0,
 					"id" : "obj-46",
@@ -323,28 +384,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-27",
-					"maxclass" : "live.meter~",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "int" ],
-					"patching_rect" : [ 114.0, 480.886566400527954, 5.0, 100.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "live.meter~",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "int" ],
-					"patching_rect" : [ 233.0, 480.886566400527954, 5.0, 100.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -371,7 +410,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 328.0, 466.0, 24.0, 24.0 ]
+					"patching_rect" : [ 257.526794000000109, 478.386549293994904, 24.0, 24.0 ]
 				}
 
 			}
@@ -382,7 +421,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 285.0, 490.0, 35.0, 22.0 ],
+					"patching_rect" : [ 211.0, 479.386549293994904, 35.0, 22.0 ],
 					"text" : "open"
 				}
 
@@ -398,7 +437,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 328.0, 565.0, 92.0, 22.0 ],
+					"patching_rect" : [ 241.0, 554.386549293994904, 92.0, 22.0 ],
 					"sig" : 0.0
 				}
 
@@ -407,11 +446,11 @@
 				"box" : 				{
 					"id" : "obj-48",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 328.0, 523.0, 69.0, 22.0 ],
-					"text" : "sfrecord~ 2"
+					"patching_rect" : [ 241.0, 512.386549293994904, 88.0, 22.0 ],
+					"text" : "mc.sfrecord~ 2"
 				}
 
 			}
@@ -429,33 +468,11 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ -20 ],
-					"bgmode" : 0,
-					"border" : 1,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-175",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "abc_gaincontrol.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 225.0, 265.0, 72.0, 110.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 136.0, 501.0, 79.886566400527954, 79.886566400527954 ]
+					"patching_rect" : [ 463.363636363636488, 314.886566400527954, 79.886566400527954, 79.886566400527954 ]
 				}
 
 			}
@@ -464,8 +481,8 @@
 					"id" : "obj-15",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "signal", "signal", "list" ],
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "list" ],
 					"patching_rect" : [ 135.863636363636431, 412.0, 141.045860073783047, 22.0 ],
 					"text" : "fildesoi3stereo~"
 				}
@@ -489,55 +506,41 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
-					"midpoints" : [ 169.386566400527954, 396.5, 145.363636363636431, 396.5 ],
+					"midpoints" : [ 237.5, 393.0, 145.363636363636431, 393.0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"midpoints" : [ 169.386566400527954, 393.0, 145.363636363636431, 393.0 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"order" : 1,
-					"source" : [ "obj-15", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-17", 1 ],
-					"order" : 2,
-					"source" : [ "obj-15", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
-					"order" : 1,
-					"source" : [ "obj-15", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-27", 0 ],
+					"destination" : [ "obj-14", 0 ],
+					"midpoints" : [ 145.363636363636431, 447.693274646997452, 84.5, 447.693274646997452 ],
 					"order" : 2,
 					"source" : [ "obj-15", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-48", 1 ],
-					"order" : 0,
-					"source" : [ "obj-15", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-48", 0 ],
+					"midpoints" : [ 145.363636363636431, 455.0, 250.5, 455.0 ],
 					"order" : 0,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"order" : 1,
 					"source" : [ "obj-15", 0 ]
 				}
 
@@ -554,14 +557,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-180", 0 ],
 					"source" : [ "obj-173", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
-					"midpoints" : [ 234.5, 396.0, 145.363636363636431, 396.0 ],
-					"source" : [ "obj-175", 0 ]
 				}
 
 			}
@@ -653,6 +648,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-48", 0 ],
+					"midpoints" : [ 220.5, 506.386549293994904, 250.5, 506.386549293994904 ],
 					"source" : [ "obj-92", 0 ]
 				}
 
@@ -660,12 +656,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-48", 0 ],
+					"midpoints" : [ 267.026794000000109, 504.693274646997452, 250.5, 504.693274646997452 ],
 					"source" : [ "obj-94", 0 ]
 				}
 
 			}
  ],
 		"parameters" : 		{
+			"obj-14" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
 			"obj-21::obj-2" : [ "live.gain~", "live.gain~", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
@@ -681,57 +679,57 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "_fildesoi.evtcounter.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "_fildesoi.gaincontrol.maxpat",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.gotoevent.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.input.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.keys.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.percentTask.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi3.events.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi3.initAndControlMessages.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "abc_gaincontrol.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/abclib/misc/others",
-				"patcherrelativepath" : "../../../../Documents/Max 8/Packages/abclib/misc/others",
 				"type" : "JSON",
 				"implicit" : 1
 			}

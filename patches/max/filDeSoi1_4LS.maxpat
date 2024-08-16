@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 1,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,13 +40,23 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 170.276794000000081, 528.249995082616806, 54.0, 22.0 ],
+					"text" : "mc.dac~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-34",
 					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 419.0, 431.0, 159.098205999999891, 74.0 ],
-					"presentation_linecount" : 5,
 					"text" : "SR : 48000\nI/O Vector Size : 256\nSignal Vector Size : 256\nScheduler in overdrive : ON\nAudio Interrupt : ON"
 				}
 
@@ -69,204 +79,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "signal", "multichannelsignal" ],
-					"patcher" : 					{
-						"fileversion" : 1,
-						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
-							"architecture" : "x64",
-							"modernui" : 1
-						}
-,
-						"classnamespace" : "box",
-						"rect" : [ 59.0, 119.0, 287.0, 384.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
-						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
-						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 130.0, 299.0, 54.0, 22.0 ],
-									"text" : "mc.dac~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"comment" : "",
-									"id" : "obj-8",
-									"index" : 1,
-									"maxclass" : "outlet",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 49.0, 299.0, 30.0, 30.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"comment" : "",
-									"id" : "obj-7",
-									"index" : 2,
-									"maxclass" : "outlet",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 81.0, 299.0, 30.0, 30.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-6",
-									"maxclass" : "newobj",
-									"numinlets" : 4,
-									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 81.25, 195.0, 80.0, 22.0 ],
-									"text" : "mc.pack~ 4"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 5,
-									"outlettype" : [ "signal", "signal", "signal", "signal", "list" ],
-									"patching_rect" : [ 81.0, 114.0, 100.0, 22.0 ],
-									"text" : "fildesoi12quadri~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 117.0, 29.0, 95.0, 20.0 ],
-									"text" : "guitar + control"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"comment" : "",
-									"id" : "obj-2",
-									"index" : 1,
-									"maxclass" : "inlet",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 81.0, 29.0, 30.0, 30.0 ]
-								}
-
-							}
- ],
-						"lines" : [ 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"order" : 0,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
-									"midpoints" : [ 90.5, 86.5, 58.5, 86.5 ],
-									"order" : 1,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 3 ],
-									"source" : [ "obj-5", 3 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 2 ],
-									"source" : [ "obj-5", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 1 ],
-									"source" : [ "obj-5", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
-									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 90.75, 257.5, 139.5, 257.5 ],
-									"order" : 0,
-									"source" : [ "obj-6", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"order" : 1,
-									"source" : [ "obj-6", 0 ]
-								}
-
-							}
- ]
-					}
-,
-					"patching_rect" : [ 170.276794000000081, 488.0, 103.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
-					"text" : "p fildesoi12quadri"
+					"outlettype" : [ "multichannelsignal", "list" ],
+					"patching_rect" : [ 170.276794000000081, 488.0, 100.0, 22.0 ],
+					"text" : "fildesoi12quadri~"
 				}
 
 			}
@@ -758,9 +573,18 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"order" : 1,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-5", 1 ],
-					"midpoints" : [ 263.776794000000109, 531.374989807605743, 515.026794000000109, 531.374989807605743 ],
-					"source" : [ "obj-6", 1 ]
+					"midpoints" : [ 179.776794000000081, 518.374989807605743, 515.026794000000109, 518.374989807605743 ],
+					"order" : 0,
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}
@@ -807,56 +631,56 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "_fildesoi.evtcounter.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.gaincontrol.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.generalCntrl.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.gotoevent.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.input.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.keys.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.quadridecodercontrol.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi1_events.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

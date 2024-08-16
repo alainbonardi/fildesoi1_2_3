@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -330,7 +330,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 250.499877999999995, 343.0, 76.0, 22.0 ],
-					"text" : "prepend a07"
+					"text" : "prepend a7"
 				}
 
 			}
@@ -341,8 +341,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 219.499877999999995, 319.0, 76.0, 22.0 ],
-					"text" : "prepend a06"
+					"patching_rect" : [ 219.499877999999995, 319.0, 69.0, 22.0 ],
+					"text" : "prepend a6"
 				}
 
 			}
@@ -353,8 +353,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 188.499877999999995, 295.0, 76.0, 22.0 ],
-					"text" : "prepend a05"
+					"patching_rect" : [ 188.499877999999995, 295.0, 69.0, 22.0 ],
+					"text" : "prepend a5"
 				}
 
 			}
@@ -365,8 +365,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 157.499877999999995, 271.0, 76.0, 22.0 ],
-					"text" : "prepend a04"
+					"patching_rect" : [ 157.499877999999995, 271.0, 69.0, 22.0 ],
+					"text" : "prepend a4"
 				}
 
 			}
@@ -377,8 +377,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 126.499908000000005, 247.0, 76.0, 22.0 ],
-					"text" : "prepend a03"
+					"patching_rect" : [ 126.499908000000005, 247.0, 69.0, 22.0 ],
+					"text" : "prepend a3"
 				}
 
 			}
@@ -389,8 +389,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 95.499938999999998, 223.0, 76.0, 22.0 ],
-					"text" : "prepend a02"
+					"patching_rect" : [ 95.499938999999998, 223.0, 69.0, 22.0 ],
+					"text" : "prepend a2"
 				}
 
 			}
@@ -401,8 +401,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.499968999999993, 199.0, 76.0, 22.0 ],
-					"text" : "prepend a01"
+					"patching_rect" : [ 64.499968999999993, 199.0, 69.0, 22.0 ],
+					"text" : "prepend a1"
 				}
 
 			}
@@ -413,8 +413,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.5, 175.0, 76.0, 22.0 ],
-					"text" : "prepend a00"
+					"patching_rect" : [ 33.5, 175.0, 69.0, 22.0 ],
+					"text" : "prepend a0"
 				}
 
 			}
@@ -1073,7 +1073,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "_fildesoi.gaincontrol.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

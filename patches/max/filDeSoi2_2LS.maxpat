@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 1,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,45 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"channels" : 2,
+					"id" : "obj-5",
+					"lastchannelcount" : 2,
+					"maxclass" : "mc.live.gain~",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 61.0, 544.0, 48.0, 136.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_longname" : "mc.live.gain~",
+							"parameter_mmax" : 6.0,
+							"parameter_mmin" : -70.0,
+							"parameter_modmode" : 3,
+							"parameter_shortname" : "mc.live.gain~",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 4
+						}
+
+					}
+,
+					"varname" : "mc.live.gain~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 114.401794000000052, 544.0, 54.0, 22.0 ],
+					"text" : "mc.dac~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-34",
 					"linecount" : 5,
@@ -83,8 +122,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 1,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -526,39 +565,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-2",
-					"maxclass" : "live.meter~",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "int" ],
-					"patching_rect" : [ 192.401794000000081, 543.999996721744537, 5.0, 100.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-5",
-					"maxclass" : "live.meter~",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "int" ],
-					"patching_rect" : [ 80.124999999999972, 543.999996721744537, 5.0, 100.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 114.401794000000052, 560.999993443489075, 60.0, 22.0 ],
-					"text" : "dac~ 1 2"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-13",
 					"linecount" : 3,
 					"maxclass" : "comment",
@@ -697,7 +703,7 @@
 					"patching_rect" : [ 199.75, 102.0, 582.5, 39.0 ],
 					"readonly" : 1,
 					"tabmode" : 0,
-					"text" : "Evt_1",
+					"text" : "FilDeSoi1_Type_Z_then_TAB_twice",
 					"textcolor" : [ 0.967309, 1.0, 0.0, 1.0 ]
 				}
 
@@ -798,8 +804,8 @@
 					"id" : "obj-12",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "signal", "signal", "list" ],
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "list" ],
 					"patching_rect" : [ 114.401794000000052, 503.25, 100.0, 22.0 ],
 					"text" : "fildesoi12stereo~"
 				}
@@ -914,30 +920,15 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"order" : 0,
-					"source" : [ "obj-12", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"order" : 1,
 					"source" : [ "obj-12", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 1 ],
+					"destination" : [ "obj-5", 0 ],
+					"midpoints" : [ 123.901794000000052, 534.125, 70.5, 534.125 ],
 					"order" : 1,
-					"source" : [ "obj-12", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"order" : 0,
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -1057,6 +1048,7 @@
  ],
 		"parameters" : 		{
 			"obj-26::obj-2" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-5" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -1066,42 +1058,42 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "_fildesoi.evtcounter.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.generalCntrl.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.gotoevent.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.input.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.keys.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi2_events.maxpat",
-				"bootpath" : "~/Desktop/UCI_Concert/2_3_FilDeSoi1et2/fildesoi1_2_maxM1IntelAboveMojave",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

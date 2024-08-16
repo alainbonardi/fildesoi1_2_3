@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 106.0, 655.0, 945.0, 696.0 ],
+		"rect" : [ 1114.0, 477.0, 945.0, 696.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -91,7 +91,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 256.526794000000109, 468.5, 54.0, 22.0 ],
+					"patching_rect" : [ 133.0, 480.0, 54.0, 22.0 ],
 					"text" : "mc.dac~"
 				}
 
@@ -134,18 +134,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "newobj",
-					"numinlets" : 8,
-					"numoutlets" : 1,
-					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 117.863636363636431, 373.499996721744537, 92.5, 22.0 ],
-					"text" : "mc.pack~ 8"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -162,7 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 38.0, 289.943283200263977, 61.0, 22.0 ],
+					"patching_rect" : [ 53.0, 290.0, 61.0, 22.0 ],
 					"text" : "gdirect $1"
 				}
 
@@ -177,7 +165,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 404.0, 347.499996721744537, 224.0, 143.0 ]
+					"patching_rect" : [ 404.0, 308.886566400527954, 224.0, 143.0 ]
 				}
 
 			}
@@ -188,7 +176,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.863636363636431, 73.943283200263977, 42.0, 22.0 ],
+					"patching_rect" : [ 133.0, 74.0, 42.0, 22.0 ],
 					"text" : "r input"
 				}
 
@@ -200,7 +188,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 139.886566400527954, 289.943283200263977, 56.0, 22.0 ],
+					"patching_rect" : [ 155.0, 290.0, 56.0, 22.0 ],
 					"text" : "r toFaust"
 				}
 
@@ -213,7 +201,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 117.863636363636431, 97.943283200263977, 39.0, 39.0 ]
+					"patching_rect" : [ 133.0, 98.0, 39.0, 39.0 ]
 				}
 
 			}
@@ -224,7 +212,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 515.863636363636488, 119.0, 83.0, 22.0 ],
+					"patching_rect" : [ 531.0, 119.0, 83.0, 22.0 ],
 					"text" : "loadmess 1 0."
 				}
 
@@ -360,7 +348,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 117.863636363636431, 151.943283200263977, 417.0, 73.0 ],
+					"patching_rect" : [ 133.0, 152.0, 417.0, 73.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -386,7 +374,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 38.0, 257.943283200263977, 50.0, 22.0 ]
+					"patching_rect" : [ 53.0, 258.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -397,7 +385,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 38.0, 228.943283200263977, 52.0, 22.0 ],
+					"patching_rect" : [ 53.0, 229.0, 52.0, 22.0 ],
 					"text" : "r gdirect"
 				}
 
@@ -440,7 +428,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 404.0, 255.0, 79.886566400527954, 79.886566400527954 ]
+					"patching_rect" : [ 285.0, 340.443283200263977, 79.886566400527954, 79.886566400527954 ]
 				}
 
 			}
@@ -449,9 +437,9 @@
 					"id" : "obj-15",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 9,
-					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "list" ],
-					"patching_rect" : [ 117.863636363636431, 337.943283200263977, 103.0, 22.0 ],
+					"numoutlets" : 2,
+					"outlettype" : [ "multichannelsignal", "list" ],
+					"patching_rect" : [ 133.0, 338.0, 103.0, 22.0 ],
 					"text" : "fildesoi3octo~"
 				}
 
@@ -474,7 +462,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
-					"midpoints" : [ 149.386566400527954, 319.443283200263977, 127.363636363636431, 319.443283200263977 ],
+					"midpoints" : [ 164.5, 319.943283200263977, 142.5, 319.943283200263977 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -488,56 +476,17 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 7 ],
-					"source" : [ "obj-15", 7 ]
+					"destination" : [ "obj-14", 1 ],
+					"midpoints" : [ 142.5, 465.846631407737732, 498.026794000000109, 465.846631407737732 ],
+					"order" : 0,
+					"source" : [ "obj-15", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 6 ],
-					"source" : [ "obj-15", 6 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 5 ],
-					"source" : [ "obj-15", 5 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 4 ],
-					"source" : [ "obj-15", 4 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 3 ],
-					"source" : [ "obj-15", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 2 ],
-					"source" : [ "obj-15", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 1 ],
-					"source" : [ "obj-15", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
+					"destination" : [ "obj-23", 0 ],
+					"order" : 1,
 					"source" : [ "obj-15", 0 ]
 				}
 
@@ -545,7 +494,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
-					"midpoints" : [ 47.5, 318.943283200263977, 127.363636363636431, 318.943283200263977 ],
+					"midpoints" : [ 62.5, 319.443283200263977, 142.5, 319.443283200263977 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -554,24 +503,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-180", 0 ],
 					"source" : [ "obj-173", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-14", 1 ],
-					"midpoints" : [ 127.363636363636431, 501.624988168478012, 498.026794000000109, 501.624988168478012 ],
-					"order" : 0,
-					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
-					"midpoints" : [ 127.363636363636431, 453.999996721744537, 266.026794000000109, 453.999996721744537 ],
-					"order" : 1,
-					"source" : [ "obj-18", 0 ]
 				}
 
 			}
@@ -601,7 +532,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
 					"hidden" : 1,
-					"midpoints" : [ 762.008129715919495, 513.386549293994904, 654.754064857959747, 513.386549293994904, 654.754064857959747, 336.499996721744537, 413.5, 336.499996721744537 ],
+					"midpoints" : [ 762.008129715919495, 513.386549293994904, 637.754064857959747, 513.386549293994904, 637.754064857959747, 293.499996721744537, 413.5, 293.499996721744537 ],
 					"order" : 1,
 					"source" : [ "obj-3", 0 ]
 				}
@@ -679,63 +610,63 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "_fildesoi.evtcounter.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.gaincontrol.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.gotoevent.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.input.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.keys.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.octodecodercontrol.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi.percentTask.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi3.events.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "_fildesoi3.initAndControlMessages.maxpat",
-				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal",
+				"bootpath" : "~/Dropbox/faustFactory/fildesoi1_2_3_factory/fildesoi1_2_3_mac_max_universal_mc",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

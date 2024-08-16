@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 499.0, 165.0, 2009.0, 1376.0 ],
+		"rect" : [ 275.0, 87.0, 2009.0, 1266.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -48,14 +48,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1106.0, 80.0, 302.0, 527.0 ],
+						"rect" : [ 134.0, 159.0, 302.0, 527.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -92,7 +92,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 156.25, 109.0, 114.0, 370.0 ],
-									"text" : ";\rtoMT sp119 1;\rtoMT sp137 1;\rtoMT sp019 1;\rtoMT sp021 1;\rtoMT sp040 1;\rtoMT sp063 1;\rtoMT sp081 1;\rtoMT sp099 1;\rtoMT sp117 1;\rtoMT sp016 1;\rtoMT rotfreq3 0.;\rtoMT rotfreq2 0.2;\rtoMT rotfreq1 -0.25;\rtoMT rotfreq0 0.3;\rtoMT rotphase3 0.;\rtoMT rotphase2 0.;\rtoMT rotphase1 0.;\rtoMT rotphase0 0.;\rtoMT sp053 0;\rtoMT sp157 0;\rtoMT sp023 0;\rtoMT sp080 0;\rtoMT sp047 0;\rtoMT sp116 0;\rtoMT sp100 0;\r"
+									"text" : ";\rtoMT sp119 1;\rtoMT sp137 1;\rtoMT sp19 1;\rtoMT sp21 1;\rtoMT sp40 1;\rtoMT sp63 1;\rtoMT sp81 1;\rtoMT sp99 1;\rtoMT sp117 1;\rtoMT sp16 1;\rtoMT rotfreq3 0.;\rtoMT rotfreq2 0.2;\rtoMT rotfreq1 -0.25;\rtoMT rotfreq0 0.3;\rtoMT rotphase3 0.;\rtoMT rotphase2 0.;\rtoMT rotphase1 0.;\rtoMT rotphase0 0.;\rtoMT sp53 0;\rtoMT sp157 0;\rtoMT sp23 0;\rtoMT sp80 0;\rtoMT sp47 0;\rtoMT sp116 0;\rtoMT sp100 0;\r"
 								}
 
 							}
@@ -105,7 +105,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 15.0, 109.0, 109.0, 370.0 ],
-									"text" : ";\rtoMT sp119 1;\rtoMT sp137 1;\rtoMT sp053 1;\rtoMT sp157 1;\rtoMT sp023 1;\rtoMT sp080 1;\rtoMT sp047 1;\rtoMT sp116 1;\rtoMT sp100 1;\rtoMT sp016 1;\rtoMT rotfreq3 0.;\rtoMT rotfreq2 0.8;\rtoMT rotfreq1 -0.4;\rtoMT rotfreq0 0.3;\rtoMT rotphase3 0.;\rtoMT rotphase2 0.;\rtoMT rotphase1 0.;\rtoMT rotphase0 0.;\rtoMT sp019 0;\rtoMT sp021 0;\rtoMT sp040 0;\rtoMT sp063 0;\rtoMT sp081 0;\rtoMT sp099 0;\rtoMT sp117 0;\r"
+									"text" : ";\rtoMT sp119 1;\rtoMT sp137 1;\rtoMT sp53 1;\rtoMT sp157 1;\rtoMT sp23 1;\rtoMT sp80 1;\rtoMT sp47 1;\rtoMT sp116 1;\rtoMT sp100 1;\rtoMT sp16 1;\rtoMT rotfreq3 0.;\rtoMT rotfreq2 0.8;\rtoMT rotfreq1 -0.4;\rtoMT rotfreq0 0.3;\rtoMT rotphase3 0.;\rtoMT rotphase2 0.;\rtoMT rotphase1 0.;\rtoMT rotphase0 0.;\rtoMT sp19 0;\rtoMT sp21 0;\rtoMT sp40 0;\rtoMT sp63 0;\rtoMT sp81 0;\rtoMT sp99 0;\rtoMT sp117 0;\r"
 								}
 
 							}
@@ -204,13 +204,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-14",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.285714285714278, 355.0, 79.0, 49.0 ],
-					"text" : ";\rtoMsg Evt_1;\r"
+					"patching_rect" : [ 64.285714285714278, 355.0, 79.0, 62.0 ],
+					"text" : ";\rhStretch 4.;\rtoMsg Evt_1;\r"
 				}
 
 			}
@@ -245,7 +245,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1778.500000327825546, 1215.0, 144.0, 719.0 ],
-					"text" : ";\rtoMT d00 300;\rtoMT d01 425;\rtoMT d02 800;\rtoMT d03 925;\rtoMT d04 1300;\rtoMT d05 1800;\rtoMT d06 2000;\rtoMT d07 2300;\rtoMT d08 200;\rtoMT d09 500;\rtoMT d10 600;\rtoMT d11 1000;\rtoMT d12 3000;\rtoMT d13 2500;\rtoMT d14 700;\rtoMT d15 300;\rtoMT tr13 50;\rtoMT out00 0.25;\rtoMT out01 0.3;\rtoMT out02 0.35;\rtoMT out03 0.;\rtoMT out04 0.25;\rtoMT out05 0.;\rtoMT out06 0.9;\rtoMT out07 0.;\rtoMT out08 0.;\rtoMT out09 0.;\rtoMT out10 0.;\rtoMT out11 0.;\rtoMT out12 0.4;\rtoMT out13 0.4;\rtoMT out14 0.3;\rtoMT out15 0.3;\rtoMT fd13 0.;\rtoMT fd10 0.2;\rtoMT r013 1;\rtoMT r029 1;\rtoMT r045 1;\rtoMT r077 1;\rtoMT r109 1;\rtoMT r205 1;\rtoMT r221 1;\rtoMT r237 1;\rtoMT r253 1;\rtStretch 0.8;\rhStretch 4;\rwHarmo 24;\rtoMT smoothDuration 10;\rrenv_freq 13;\rguitar_level 70;\rtoMsg Evt_37;\r"
+					"text" : ";\rtoMT d0 300;\rtoMT d1 425;\rtoMT d2 800;\rtoMT d3 925;\rtoMT d4 1300;\rtoMT d5 1800;\rtoMT d6 2000;\rtoMT d7 2300;\rtoMT d8 200;\rtoMT d9 500;\rtoMT d10 600;\rtoMT d11 1000;\rtoMT d12 3000;\rtoMT d13 2500;\rtoMT d14 700;\rtoMT d15 300;\rtoMT tr13 50;\rtoMT out0 0.25;\rtoMT out1 0.3;\rtoMT out2 0.35;\rtoMT out3 0.;\rtoMT out4 0.25;\rtoMT out5 0.;\rtoMT out6 0.9;\rtoMT out7 0.;\rtoMT out8 0.;\rtoMT out9 0.;\rtoMT out10 0.;\rtoMT out11 0.;\rtoMT out12 0.4;\rtoMT out13 0.4;\rtoMT out14 0.3;\rtoMT out15 0.3;\rtoMT fd13 0.;\rtoMT fd10 0.2;\rtoMT r13 1;\rtoMT r29 1;\rtoMT r45 1;\rtoMT r77 1;\rtoMT r109 1;\rtoMT r205 1;\rtoMT r221 1;\rtoMT r237 1;\rtoMT r253 1;\rtStretch 0.8;\rhStretch 4;\rwHarmo 24;\rtoMT smoothDuration 10;\rrenv_freq 13;\rguitar_level 70;\rtoMsg Evt_37;\r"
 				}
 
 			}
@@ -341,7 +341,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1273.0, 1215.0, 144.0, 344.0 ],
-					"text" : ";\rtoSpatConfig 1;\rtoMT out12 1.;\rtStretch 0.8;\rhStretch -1;\rtoMT fd13 0.34;\rwHarmo 20;\rrenv_freq 17;\rrenv_level 122;\rguitar_level 80;\rdelharmo_level 127;\rtoMT smoothDuration 10;\rtoMT fd00 0.9;\rtoMT fd01 0.9;\rtoMT fd02 0.9;\rtoMT fd03 0.9;\rtoMT fd04 0.9;\rtoMT fd05 0.9;\rtoMT fd06 0.9;\rtoMT fd07 0.9;\rtoMT fd12 0.9;\rtoMT fd14 0.9;\rtoMT fd15 0.9;\rtoMsg Evt_33;\r"
+					"text" : ";\rtoSpatConfig 1;\rtoMT out12 1.;\rtStretch 0.8;\rhStretch -1;\rtoMT fd13 0.34;\rwHarmo 20;\rrenv_freq 17;\rrenv_level 122;\rguitar_level 80;\rdelharmo_level 127;\rtoMT smoothDuration 10;\rtoMT fd0 0.9;\rtoMT fd1 0.9;\rtoMT fd2 0.9;\rtoMT fd3 0.9;\rtoMT fd4 0.9;\rtoMT fd5 0.9;\rtoMT fd6 0.9;\rtoMT fd7 0.9;\rtoMT fd12 0.9;\rtoMT fd14 0.9;\rtoMT fd15 0.9;\rtoMsg Evt_33;\r"
 				}
 
 			}
@@ -569,7 +569,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1645.0, 798.0, 157.0, 330.0 ],
-					"text" : ";\rtoSpatConfig 2;\rguitar_level 120;\rtStretch 0.8;\rhStretch 0.3;\rtoMT fd13 0.3;\rwHarmo 16;\rguitar_level 65;\rrenv_level 115;\rrenv_freq 4;\rtoMT smoothDuration 3000;\rtoMT fd00 0.99;\rtoMT fd01 0.99;\rtoMT fd02 0.99;\rtoMT fd03 0.99;\rtoMT fd04 0.99;\rtoMT fd05 0.99;\rtoMT fd06 0.99;\rtoMT fd07 0.99;\rtoMT fd12 0.99;\rtoMT fd14 0.99;\rtoMT fd15 0.99;\rtoMsg Evt_24;\r"
+					"text" : ";\rtoSpatConfig 2;\rguitar_level 120;\rtStretch 0.8;\rhStretch 0.3;\rtoMT fd13 0.3;\rwHarmo 16;\rguitar_level 65;\rrenv_level 115;\rrenv_freq 4;\rtoMT smoothDuration 3000;\rtoMT fd0 0.99;\rtoMT fd1 0.99;\rtoMT fd2 0.99;\rtoMT fd3 0.99;\rtoMT fd4 0.99;\rtoMT fd5 0.99;\rtoMT fd6 0.99;\rtoMT fd7 0.99;\rtoMT fd12 0.99;\rtoMT fd14 0.99;\rtoMT fd15 0.99;\rtoMsg Evt_24;\r"
 				}
 
 			}
@@ -592,8 +592,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1479.0, 798.0, 122.0, 330.0 ],
-					"text" : ";\rtoSpatConfig 1;\rtoMT out12 1.;\rtoMT dStretch 0.8;\rtoMT hStretch -1.;\rtoMT fd13 0.34;\rtoMT hWin 20;\rrenv_freq 17;\rrenv_level 122;\rguitar_level 90;\rdelharmo_level 115;\rtoMT fd00 0.9;\rtoMT fd01 0.9;\rtoMT fd02 0.9;\rtoMT fd03 0.9;\rtoMT fd04 0.9;\rtoMT fd05 0.9;\rtoMT fd06 0.9;\rtoMT fd07 0.9;\rtoMT fd12 0.9;\rtoMT fd14 0.9;\rtoMT fd15 0.9;\rtoMsg Evt_23;\r"
+					"patching_rect" : [ 1479.0, 798.0, 116.0, 330.0 ],
+					"text" : ";\rtoSpatConfig 1;\rtoMT out12 1.;\rtoMT dStretch 0.8;\rtoMT hStretch -1.;\rtoMT fd13 0.34;\rtoMT hWin 20;\rrenv_freq 17;\rrenv_level 122;\rguitar_level 90;\rdelharmo_level 115;\rtoMT fd0 0.9;\rtoMT fd1 0.9;\rtoMT fd2 0.9;\rtoMT fd3 0.9;\rtoMT fd4 0.9;\rtoMT fd5 0.9;\rtoMT fd6 0.9;\rtoMT fd7 0.9;\rtoMT fd12 0.9;\rtoMT fd14 0.9;\rtoMT fd15 0.9;\rtoMsg Evt_23;\r"
 				}
 
 			}
@@ -737,7 +737,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 710.0, 798.0, 92.0, 277.0 ],
-					"text" : ";\rtoSpatConfig 2;\rtStretch 0.4;\rhStretch 0.1;\rtoMT fd13 0.4;\rtoMT fd13 0.8;\rrenv_level 90;\rtoMT fd00 0.99;\rtoMT fd01 0.99;\rtoMT fd02 0.99;\rtoMT fd03 0.99;\rtoMT fd04 0.99;\rtoMT fd05 0.99;\rtoMT fd06 0.99;\rtoMT fd07 0.99;\rtoMT fd12 0.99;\rtoMT fd14 0.99;\rtoMT fd15 0.99;\rtoMsg Evt_17;\r"
+					"text" : ";\rtoSpatConfig 2;\rtStretch 0.4;\rhStretch 0.1;\rtoMT fd13 0.4;\rtoMT fd13 0.8;\rrenv_level 90;\rtoMT fd0 0.99;\rtoMT fd1 0.99;\rtoMT fd2 0.99;\rtoMT fd3 0.99;\rtoMT fd4 0.99;\rtoMT fd5 0.99;\rtoMT fd6 0.99;\rtoMT fd7 0.99;\rtoMT fd12 0.99;\rtoMT fd14 0.99;\rtoMT fd15 0.99;\rtoMsg Evt_17;\r"
 				}
 
 			}
@@ -952,7 +952,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1027.0, 237.333332300186157, 137.0, 303.0 ],
-					"text" : ";\rtoSpatConfig 1;\rtStretch 0.8;\rhStretch -2;\rtoMT fd13 0.2;\rwHarmo 22;\rguitar_level 110;\rrenv_freq 17.;\rtoMT smoothDuration 1;\rtoMT fd00 0.9;\rtoMT fd01 0.9;\rtoMT fd02 0.9;\rtoMT fd03 0.9;\rtoMT fd04 0.9;\rtoMT fd05 0.9;\rtoMT fd06 0.9;\rtoMT fd07 0.9;\rtoMT fd12 0.9;\rtoMT fd14 0.9;\rtoMT fd15 0.9;\rtoMsg Evt_9;\r"
+					"text" : ";\rtoSpatConfig 1;\rtStretch 0.8;\rhStretch -2;\rtoMT fd13 0.2;\rwHarmo 22;\rguitar_level 110;\rrenv_freq 17.;\rtoMT smoothDuration 1;\rtoMT fd0 0.9;\rtoMT fd1 0.9;\rtoMT fd2 0.9;\rtoMT fd3 0.9;\rtoMT fd4 0.9;\rtoMT fd5 0.9;\rtoMT fd6 0.9;\rtoMT fd7 0.9;\rtoMT fd12 0.9;\rtoMT fd14 0.9;\rtoMT fd15 0.9;\rtoMsg Evt_9;\r"
 				}
 
 			}
@@ -999,8 +999,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 757.0, 237.333332300186157, 128.0, 250.0 ],
-					"text" : ";\rtStretch 1.5;\rhStretch 2;\rtoMT fd13 0.3;\rwHarmo 24;\rrenv_level 115;\rguitar_level 117;\rdelharmo_level 127;\rtoMT r013 1;\rtoMT r029 1;\rtoMT r045 1;\rtoMT r077 1;\rtoMT r205 1;\rtoMT r221 1;\rtoMT r237 1;\rtoMT r253 1;\rtoMsg Evt_7;\r"
+					"patching_rect" : [ 757.0, 237.333332300186157, 117.0, 250.0 ],
+					"text" : ";\rtStretch 1.5;\rhStretch 2;\rtoMT fd13 0.3;\rwHarmo 24;\rrenv_level 115;\rguitar_level 117;\rdelharmo_level 127;\rtoMT r13 1;\rtoMT r29 1;\rtoMT r45 1;\rtoMT r77 1;\rtoMT r205 1;\rtoMT r221 1;\rtoMT r237 1;\rtoMT r253 1;\rtoMsg Evt_7;\r"
 				}
 
 			}
@@ -1013,7 +1013,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 597.999999761581421, 237.333332300186157, 144.0, 437.0 ],
-					"text" : ";\rtoSpatConfig 2;\rtStretch 1.5;\rhStretch -0.5;\rtoMT fd13 0.;\rwHarmo 24;\rrenv_level 101;\rrenv_freq 13.;\rguitar_level 120;\rdelharmo_level 120;\rtoMT r013 0;\rtoMT r029 0;\rtoMT r045 0;\rtoMT r077 0;\rtoMT r205 0;\rtoMT r221 0;\rtoMT r237 0;\rtoMT r253 0;\rtoMT smoothDuration 10;\rtoMT fd00 0.99;\rtoMT fd01 0.99;\rtoMT fd02 0.99;\rtoMT fd03 0.99;\rtoMT fd04 0.99;\rtoMT fd05 0.99;\rtoMT fd06 0.99;\rtoMT fd07 0.99;\rtoMT fd12 0.99;\rtoMT fd14 0.99;\rtoMT fd15 0.99;\rtoMsg Evt_6;\r"
+					"text" : ";\rtoSpatConfig 2;\rtStretch 1.5;\rhStretch -0.5;\rtoMT fd13 0.;\rwHarmo 24;\rrenv_level 101;\rrenv_freq 13.;\rguitar_level 120;\rdelharmo_level 120;\rtoMT r13 0;\rtoMT r29 0;\rtoMT r45 0;\rtoMT r77 0;\rtoMT r205 0;\rtoMT r221 0;\rtoMT r237 0;\rtoMT r253 0;\rtoMT smoothDuration 10;\rtoMT fd0 0.99;\rtoMT fd1 0.99;\rtoMT fd2 0.99;\rtoMT fd3 0.99;\rtoMT fd4 0.99;\rtoMT fd5 0.99;\rtoMT fd6 0.99;\rtoMT fd7 0.99;\rtoMT fd12 0.99;\rtoMT fd14 0.99;\rtoMT fd15 0.99;\rtoMsg Evt_6;\r"
 				}
 
 			}
@@ -1134,8 +1134,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1178,7 +1178,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 103.0, 134.333332300186157, 240.0, 4902.0 ],
-									"text" : ";\rtoMT d00 300;\rtoMT d01 425;\rtoMT d02 800;\rtoMT d03 925;\rtoMT d04 1300;\rtoMT d05 1800;\rtoMT d06 2050;\rtoMT d07 2300;\rtoMT d08 200;\rtoMT d09 500;\rtoMT d10 600;\rtoMT d11 1000;\rtoMT d12 3000;\rtoMT d13 2500;\rtoMT d14 700;\rtoMT d15 300;\rtoMT fd00 0.8;\rtoMT fd01 0.9;\rtoMT fd02 0.9;\rtoMT fd03 0.9;\rtoMT fd04 0.9;\rtoMT fd05 0.9;\rtoMT fd06 0.9;\rtoMT fd07 0.9;\rtoMT fd08 0.5;\rtoMT fd09 0.5;\rtoMT fd10 0.2;\rtoMT fd11 0.5;\rtoMT fd12 0.9;\rtoMT fd13 0.;\rtoMT fd14 0.9;\rtoMT fd15 0.9;\rtoMT tr00 386;\rtoMT tr01 772;\rtoMT tr02 -386;\rtoMT tr03 180;\rtoMT tr04 386;\rtoMT tr05 -772;\rtoMT tr06 -45;\rtoMT tr07 180;\rtoMT tr08 0;\rtoMT tr09 0;\rtoMT tr10 0;\rtoMT tr11 0;\rtoMT tr12 -500;\rtoMT tr13 50;\rtoMT tr14 -1000;\rtoMT tr15 -1200;\rtoMT xvd00 1;\rtoMT xvd01 1;\rtoMT xvd02 1;\rtoMT xvd03 1;\rtoMT xvd04 1;\rtoMT xvd05 1;\rtoMT xvd06 1;\rtoMT xvd07 1;\rtoMT xvd08 0;\rtoMT xvd09 0;\rtoMT xvd10 0;\rtoMT xvd11 0;\rtoMT xvd12 1;\rtoMT xvd13 1;\rtoMT xvd14 1;\rtoMT xvd15 1;\rtoMT inp00 0;\rtoMT inp01 0;\rtoMT inp02 0;\rtoMT inp03 0;\rtoMT inp04 0;\rtoMT inp05 0;\rtoMT inp06 0;\rtoMT inp07 0;\rtoMT inp08 1;\rtoMT inp09 1;\rtoMT inp10 1;\rtoMT inp11 1;\rtoMT inp12 1;\rtoMT inp13 1;\rtoMT inp14 0.5;\rtoMT inp15 1;\rtoMT out00 0.25;\rtoMT out01 0.3;\rtoMT out02 0.35;\rtoMT out03 0;\rtoMT out04 0.25;\rtoMT out05 0;\rtoMT out06 0.9;\rtoMT out07 0;\rtoMT out08 0;\rtoMT out09 0;\rtoMT out10 0;\rtoMT out11 0;\rtoMT out12 0.4;\rtoMT out13 0.4;\rtoMT out14 0.3;\rtoMT out15 0.3;\rtStretch 0.8;\rhStretch 4;\rwHarmo 24;\rtoMT smoothDuration 50;\rtoMT r000 1;\rtoMT r016 0;\rtoMT r032 0;\rtoMT r048 0;\rtoMT r064 0;\rtoMT r080 0;\rtoMT r096 0;\rtoMT r112 0;\rtoMT r128 0;\rtoMT r144 0;\rtoMT r160 0;\rtoMT r176 0;\rtoMT r192 0;\rtoMT r208 0;\rtoMT r224 0;\rtoMT r240 0;\rtoMT r001 0;\rtoMT r017 1;\rtoMT r033 0;\rtoMT r049 0;\rtoMT r065 0;\rtoMT r081 0;\rtoMT r097 0;\rtoMT r113 0;\rtoMT r129 0;\rtoMT r145 0;\rtoMT r161 0;\rtoMT r177 0;\rtoMT r193 0;\rtoMT r209 0;\rtoMT r225 0;\rtoMT r241 0;\rtoMT r002 0;\rtoMT r018 0;\rtoMT r034 1;\rtoMT r050 0;\rtoMT r066 0;\rtoMT r082 0;\rtoMT r098 0;\rtoMT r114 0;\rtoMT r130 0;\rtoMT r146 0;\rtoMT r162 0;\rtoMT r178 0;\rtoMT r194 0;\rtoMT r210 0;\rtoMT r226 0;\rtoMT r242 0;\rtoMT r003 0;\rtoMT r019 0;\rtoMT r035 0;\rtoMT r051 1;\rtoMT r067 0;\rtoMT r083 0;\rtoMT r099 0;\rtoMT r115 0;\rtoMT r131 0;\rtoMT r147 0;\rtoMT r163 0;\rtoMT r179 0;\rtoMT r195 0;\rtoMT r211 0;\rtoMT r227 0;\rtoMT r243 0;\rtoMT r004 0;\rtoMT r020 0;\rtoMT r036 0;\rtoMT r052 0;\rtoMT r068 1;\rtoMT r084 0;\rtoMT r100 0;\rtoMT r116 0;\rtoMT r132 0;\rtoMT r148 0;\rtoMT r164 0;\rtoMT r180 0;\rtoMT r196 0;\rtoMT r212 0;\rtoMT r228 0;\rtoMT r244 0;\rtoMT r005 0;\rtoMT r021 0;\rtoMT r037 0;\rtoMT r053 0;\rtoMT r069 0;\rtoMT r085 1;\rtoMT r101 0;\rtoMT r117 0;\rtoMT r133 0;\rtoMT r149 0;\rtoMT r165 0;\rtoMT r181 0;\rtoMT r197 0;\rtoMT r213 0;\rtoMT r229 0;\rtoMT r245 0;\rtoMT r006 0;\rtoMT r022 0;\rtoMT r038 0;\rtoMT r054 0;\rtoMT r070 0;\rtoMT r086 0;\rtoMT r102 1;\rtoMT r118 0;\rtoMT r134 0;\rtoMT r150 0;\rtoMT r166 0;\rtoMT r182 0;\rtoMT r198 0;\rtoMT r214 0;\rtoMT r230 0;\rtoMT r246 0;\rtoMT r007 0;\rtoMT r023 0;\rtoMT r039 0;\rtoMT r055 0;\rtoMT r071 0;\rtoMT r087 0;\rtoMT r103 0;\rtoMT r119 1;\rtoMT r135 0;\rtoMT r151 0;\rtoMT r167 0;\rtoMT r183 0;\rtoMT r199 0;\rtoMT r215 0;\rtoMT r231 0;\rtoMT r247 0;\rtoMT r008 1;\rtoMT r024 0;\rtoMT r040 0;\rtoMT r056 0;\rtoMT r072 1;\rtoMT r088 0;\rtoMT r104 0;\rtoMT r120 0;\rtoMT r136 1;\rtoMT r152 0;\rtoMT r168 0;\rtoMT r184 0;\rtoMT r200 0;\rtoMT r216 0;\rtoMT r232 0;\rtoMT r248 0;\rtoMT r009 0;\rtoMT r025 1;\rtoMT r041 0;\rtoMT r057 0;\rtoMT r073 0;\rtoMT r089 1;\rtoMT r105 0;\rtoMT r121 0;\rtoMT r137 0;\rtoMT r153 1;\rtoMT r169 0;\rtoMT r185 0;\rtoMT r201 0;\rtoMT r217 0;\rtoMT r233 0;\rtoMT r249 0;\rtoMT r010 0;\rtoMT r026 0;\rtoMT r042 1;\rtoMT r058 0;\rtoMT r074 0;\rtoMT r090 0;\rtoMT r106 1;\rtoMT r122 0;\rtoMT r138 0;\rtoMT r154 0;\rtoMT r170 1;\rtoMT r186 0;\rtoMT r202 0;\rtoMT r218 0;\rtoMT r234 0;\rtoMT r250 0;\rtoMT r011 0;\rtoMT r027 0;\rtoMT r043 0;\rtoMT r059 1;\rtoMT r075 0;\rtoMT r091 0;\rtoMT r107 0;\rtoMT r123 1;\rtoMT r139 0;\rtoMT r155 0;\rtoMT r171 0;\rtoMT r187 1;\rtoMT r203 0;\rtoMT r219 0;\rtoMT r235 0;\rtoMT r251 0;\rtoMT r012 0;\rtoMT r028 0;\rtoMT r044 0;\rtoMT r060 0;\rtoMT r076 0;\rtoMT r092 0;\rtoMT r108 0;\rtoMT r124 0;\rtoMT r140 0;\rtoMT r156 0;\rtoMT r172 0;\rtoMT r188 0;\rtoMT r204 0;\rtoMT r220 0;\rtoMT r236 0;\rtoMT r252 0;\rtoMT r013 1;\rtoMT r029 1;\rtoMT r045 1;\rtoMT r061 0;\rtoMT r077 1;\rtoMT r093 0;\rtoMT r109 1;\rtoMT r125 0;\rtoMT r141 0;\rtoMT r157 0;\rtoMT r173 0;\rtoMT r189 0;\rtoMT r205 1;\rtoMT r221 1;\rtoMT r237 1;\rtoMT r253 1;\rtoMT r014 0;\rtoMT r030 0;\rtoMT r046 0;\rtoMT r062 0;\rtoMT r078 0;\rtoMT r094 0;\rtoMT r110 0;\rtoMT r126 0;\rtoMT r142 0;\rtoMT r158 0;\rtoMT r174 0;\rtoMT r190 0;\rtoMT r206 0;\rtoMT r222 0;\rtoMT r238 0;\rtoMT r254 0;\rtoMT r015 0;\rtoMT r031 0;\rtoMT r047 0;\rtoMT r063 0;\rtoMT r079 0;\rtoMT r095 0;\rtoMT r111 0;\rtoMT r127 0;\rtoMT r143 0;\rtoMT r159 0;\rtoMT r175 0;\rtoMT r191 0;\rtoMT r207 0;\rtoMT r223 0;\rtoMT r239 0;\rtoMT r255 0;\rtoSpatConfig 1;\rguitar_level 110;\rdelharmo_level 127.;\rrenv_level 127.;\rrenv_freq 13.;\rrenv_short 0.5;\rtoMsg FilDeSoi1_Type_Z_then_TAB_twice;\r"
+									"text" : ";\rtoMT d0 300;\rtoMT d1 425;\rtoMT d2 800;\rtoMT d3 925;\rtoMT d4 1300;\rtoMT d5 1800;\rtoMT d6 2050;\rtoMT d7 2300;\rtoMT d8 200;\rtoMT d9 500;\rtoMT d10 600;\rtoMT d11 1000;\rtoMT d12 3000;\rtoMT d13 2500;\rtoMT d14 700;\rtoMT d15 300;\rtoMT fd0 0.8;\rtoMT fd1 0.9;\rtoMT fd2 0.9;\rtoMT fd3 0.9;\rtoMT fd4 0.9;\rtoMT fd5 0.9;\rtoMT fd6 0.9;\rtoMT fd7 0.9;\rtoMT fd8 0.5;\rtoMT fd9 0.5;\rtoMT fd10 0.2;\rtoMT fd11 0.5;\rtoMT fd12 0.9;\rtoMT fd13 0.;\rtoMT fd14 0.9;\rtoMT fd15 0.9;\rtoMT tr0 386;\rtoMT tr1 772;\rtoMT tr2 -386;\rtoMT tr3 180;\rtoMT tr4 386;\rtoMT tr5 -772;\rtoMT tr6 -45;\rtoMT tr7 180;\rtoMT tr8 0;\rtoMT tr9 0;\rtoMT tr10 0;\rtoMT tr11 0;\rtoMT tr12 -500;\rtoMT tr13 50;\rtoMT tr14 -1000;\rtoMT tr15 -1200;\rtoMT xvd0 1;\rtoMT xvd1 1;\rtoMT xvd2 1;\rtoMT xvd3 1;\rtoMT xvd4 1;\rtoMT xvd5 1;\rtoMT xvd6 1;\rtoMT xvd7 1;\rtoMT xvd8 0;\rtoMT xvd9 0;\rtoMT xvd10 0;\rtoMT xvd11 0;\rtoMT xvd12 1;\rtoMT xvd13 1;\rtoMT xvd14 1;\rtoMT xvd15 1;\rtoMT inp0 0;\rtoMT inp1 0;\rtoMT inp2 0;\rtoMT inp3 0;\rtoMT inp4 0;\rtoMT inp5 0;\rtoMT inp6 0;\rtoMT inp7 0;\rtoMT inp8 1;\rtoMT inp9 1;\rtoMT inp10 1;\rtoMT inp11 1;\rtoMT inp12 1;\rtoMT inp13 1;\rtoMT inp14 0.5;\rtoMT inp15 1;\rtoMT out0 0.25;\rtoMT out1 0.3;\rtoMT out2 0.35;\rtoMT out3 0;\rtoMT out4 0.25;\rtoMT out5 0;\rtoMT out6 0.9;\rtoMT out7 0;\rtoMT out8 0;\rtoMT out9 0;\rtoMT out10 0;\rtoMT out11 0;\rtoMT out12 0.4;\rtoMT out13 0.4;\rtoMT out14 0.3;\rtoMT out15 0.3;\rtStretch 0.8;\rhStretch -1.;\rwHarmo 24;\rtoMT smoothDuration 50;\rtoMT r0 1;\rtoMT r16 0;\rtoMT r32 0;\rtoMT r48 0;\rtoMT r64 0;\rtoMT r80 0;\rtoMT r96 0;\rtoMT r112 0;\rtoMT r128 0;\rtoMT r144 0;\rtoMT r160 0;\rtoMT r176 0;\rtoMT r192 0;\rtoMT r208 0;\rtoMT r224 0;\rtoMT r240 0;\rtoMT r1 0;\rtoMT r17 1;\rtoMT r33 0;\rtoMT r49 0;\rtoMT r65 0;\rtoMT r81 0;\rtoMT r97 0;\rtoMT r113 0;\rtoMT r129 0;\rtoMT r145 0;\rtoMT r161 0;\rtoMT r177 0;\rtoMT r193 0;\rtoMT r209 0;\rtoMT r225 0;\rtoMT r241 0;\rtoMT r2 0;\rtoMT r18 0;\rtoMT r34 1;\rtoMT r50 0;\rtoMT r66 0;\rtoMT r82 0;\rtoMT r98 0;\rtoMT r114 0;\rtoMT r130 0;\rtoMT r146 0;\rtoMT r162 0;\rtoMT r178 0;\rtoMT r194 0;\rtoMT r210 0;\rtoMT r226 0;\rtoMT r242 0;\rtoMT r3 0;\rtoMT r19 0;\rtoMT r35 0;\rtoMT r51 1;\rtoMT r67 0;\rtoMT r83 0;\rtoMT r99 0;\rtoMT r115 0;\rtoMT r131 0;\rtoMT r147 0;\rtoMT r163 0;\rtoMT r179 0;\rtoMT r195 0;\rtoMT r211 0;\rtoMT r227 0;\rtoMT r243 0;\rtoMT r4 0;\rtoMT r20 0;\rtoMT r36 0;\rtoMT r52 0;\rtoMT r68 1;\rtoMT r84 0;\rtoMT r100 0;\rtoMT r116 0;\rtoMT r132 0;\rtoMT r148 0;\rtoMT r164 0;\rtoMT r180 0;\rtoMT r196 0;\rtoMT r212 0;\rtoMT r228 0;\rtoMT r244 0;\rtoMT r5 0;\rtoMT r21 0;\rtoMT r37 0;\rtoMT r53 0;\rtoMT r69 0;\rtoMT r85 1;\rtoMT r101 0;\rtoMT r117 0;\rtoMT r133 0;\rtoMT r149 0;\rtoMT r165 0;\rtoMT r181 0;\rtoMT r197 0;\rtoMT r213 0;\rtoMT r229 0;\rtoMT r245 0;\rtoMT r6 0;\rtoMT r22 0;\rtoMT r38 0;\rtoMT r54 0;\rtoMT r70 0;\rtoMT r86 0;\rtoMT r102 1;\rtoMT r118 0;\rtoMT r134 0;\rtoMT r150 0;\rtoMT r166 0;\rtoMT r182 0;\rtoMT r198 0;\rtoMT r214 0;\rtoMT r230 0;\rtoMT r246 0;\rtoMT r7 0;\rtoMT r23 0;\rtoMT r39 0;\rtoMT r55 0;\rtoMT r71 0;\rtoMT r87 0;\rtoMT r103 0;\rtoMT r119 1;\rtoMT r135 0;\rtoMT r151 0;\rtoMT r167 0;\rtoMT r183 0;\rtoMT r199 0;\rtoMT r215 0;\rtoMT r231 0;\rtoMT r247 0;\rtoMT r8 1;\rtoMT r24 0;\rtoMT r40 0;\rtoMT r56 0;\rtoMT r72 1;\rtoMT r88 0;\rtoMT r104 0;\rtoMT r120 0;\rtoMT r136 1;\rtoMT r152 0;\rtoMT r168 0;\rtoMT r184 0;\rtoMT r200 0;\rtoMT r216 0;\rtoMT r232 0;\rtoMT r248 0;\rtoMT r9 0;\rtoMT r25 1;\rtoMT r41 0;\rtoMT r57 0;\rtoMT r73 0;\rtoMT r89 1;\rtoMT r105 0;\rtoMT r121 0;\rtoMT r137 0;\rtoMT r153 1;\rtoMT r169 0;\rtoMT r185 0;\rtoMT r201 0;\rtoMT r217 0;\rtoMT r233 0;\rtoMT r249 0;\rtoMT r10 0;\rtoMT r26 0;\rtoMT r42 1;\rtoMT r58 0;\rtoMT r74 0;\rtoMT r90 0;\rtoMT r106 1;\rtoMT r122 0;\rtoMT r138 0;\rtoMT r154 0;\rtoMT r170 1;\rtoMT r186 0;\rtoMT r202 0;\rtoMT r218 0;\rtoMT r234 0;\rtoMT r250 0;\rtoMT r11 0;\rtoMT r27 0;\rtoMT r43 0;\rtoMT r59 1;\rtoMT r75 0;\rtoMT r91 0;\rtoMT r107 0;\rtoMT r123 1;\rtoMT r139 0;\rtoMT r155 0;\rtoMT r171 0;\rtoMT r187 1;\rtoMT r203 0;\rtoMT r219 0;\rtoMT r235 0;\rtoMT r251 0;\rtoMT r12 0;\rtoMT r28 0;\rtoMT r44 0;\rtoMT r60 0;\rtoMT r76 0;\rtoMT r92 0;\rtoMT r108 0;\rtoMT r124 0;\rtoMT r140 0;\rtoMT r156 0;\rtoMT r172 0;\rtoMT r188 0;\rtoMT r204 0;\rtoMT r220 0;\rtoMT r236 0;\rtoMT r252 0;\rtoMT r13 1;\rtoMT r29 1;\rtoMT r45 1;\rtoMT r61 0;\rtoMT r77 1;\rtoMT r93 0;\rtoMT r109 1;\rtoMT r125 0;\rtoMT r141 0;\rtoMT r157 0;\rtoMT r173 0;\rtoMT r189 0;\rtoMT r205 1;\rtoMT r221 1;\rtoMT r237 1;\rtoMT r253 1;\rtoMT r14 0;\rtoMT r30 0;\rtoMT r46 0;\rtoMT r62 0;\rtoMT r78 0;\rtoMT r94 0;\rtoMT r110 0;\rtoMT r126 0;\rtoMT r142 0;\rtoMT r158 0;\rtoMT r174 0;\rtoMT r190 0;\rtoMT r206 0;\rtoMT r222 0;\rtoMT r238 0;\rtoMT r254 0;\rtoMT r15 0;\rtoMT r31 0;\rtoMT r47 0;\rtoMT r63 0;\rtoMT r79 0;\rtoMT r95 0;\rtoMT r111 0;\rtoMT r127 0;\rtoMT r143 0;\rtoMT r159 0;\rtoMT r175 0;\rtoMT r191 0;\rtoMT r207 0;\rtoMT r223 0;\rtoMT r239 0;\rtoMT r255 0;\rtoSpatConfig 1;\rguitar_level 110;\rdelharmo_level 127.;\rrenv_level 127.;\rrenv_freq 13.;\rrenv_short 0.5;\rtoMsg FilDeSoi1_Type_Z_then_TAB_twice;\r"
 								}
 
 							}
